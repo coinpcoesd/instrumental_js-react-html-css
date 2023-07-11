@@ -1043,248 +1043,250 @@ if (isset($_POST['remove'])) {
 </head>
 <body>
     <form action="/config/db.php" method="POST">
+
+        <div class="container">
         <div class="card bg-light mb-3">
             <div class="card-header">Ficha de acolhimento individual</div>
 
-        <main>
-            <div class="box-dados-iniciais">
-                <div class="dados-iniciais">
-                    <label for="input-inicial" class="question-objetiva">Nº da ficha:</label>
-                    <input class="input-text" id="field" name="numero_da_ficha"/>
-                </div>
-                <div class="dados-iniciais">
-                    <label for="input-inicial" class="question-objetiva">CPF:</label>
-                    <input class="input-text input-cpf" id="field" name="cpf" />
-                </div>
-            </div>
-        </main>
-        
-        <section class="parte-um">
-            <label class="question-objetiva">Qual é o tipo de atendimento realizado?</label>
-            <select id="field" name="select-atendimento" class="select mySelect" required>
-                <option></option>
-                <option>Teleatendimento psicossocial via SISGEP</option>
-                <option>Teleatendimento psicossocial realizado via demanda espontânea</option>
-                <option>Teleatendimento psicossocial presencial realizado externamente</option>
-                <option>Outro tipo de atendimento realizado</option>
-            </select>
-            <div id="inputOculto">
-                Nº do protocolo do atendimento SISGEP:
-                <input type="text" class="input-text" />
-            </div>
-            
-            <label class="question-objetiva" required>Quem procurou ajuda/tratamento?</label>
-            <select id="field" class="select select-ajuda">
-                <option></option>
-                <option>Usuário</option>
-                <option>Usuário e família</option>
-                <option>Família</option>
-                <option>Amigos e conhecidos</option>
-                <option>Promotorias de Justiça</option>
-                <option>Técnicos de instituições</option>
-                <option>Outras pessoas</option>
-            </select>
-            <div id="inputOcultoAjuda" required>
-                Qual(is) outras pessoas procuraram ajuda/tratamento?
-                <input type="text" class="input-text" />
-            </div>
-            
-            <div class="box-conhecimento">
-                <label class="question-objetiva" required>Como ficou sabendo do serviço?</label>
-                <input type="text" class="input-text" id="field" />
-            </div>  
-        </section>
-        
-        <section class="parte-dois">
-            <h3>Dados Sociodemográficos</h3>
-            <div class="box-dados-iniciais">
-                <div class="box-dados">
-                    <label class="question-objetiva" required>Gênero</label>
-                    <select id="select-genero" class="select select-outro" onclick="selectGenero()" name="genero">
-                        <option value=""></option>
-                        <option value="masculino">Homem</option>
-                        <option value="feminino">Mulher</option>
-                        <option value="outrogenero"> Outro </option>
-                    </select>
-
-                    <div id="outroGenero" style="display: none;">
-                        <label for="input-outro-genero">Qual gênero?</label>
-                        <input type="text" id="input-outro-genero" class="input-text" />
+            <main>
+                <div class="box-dados-iniciais">
+                    <div class="dados-iniciais">
+                        <label for="input-inicial" class="question-objetiva">Nº da ficha:</label>
+                        <input class="input-text" id="field" name="numero_da_ficha"/>
+                    </div>
+                    <div class="dados-iniciais">
+                        <label for="input-inicial" class="question-objetiva">CPF:</label>
+                        <input class="input-text input-cpf" id="field" name="cpf" />
                     </div>
                 </div>
-
-                <div class="box-dados">
-                    <label class="question-objetiva" required>Você é gestante?</label>
-                    <ul class="radio">
-                        <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
-                        <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
-                        <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
-                    </ul>
+            </main>
+        
+            <section class="parte-um">
+                <label class="question-objetiva">Qual é o tipo de atendimento realizado?</label>
+                <select id="field" name="select-atendimento" class="select mySelect" required>
+                    <option></option>
+                    <option>Teleatendimento psicossocial via SISGEP</option>
+                    <option>Teleatendimento psicossocial realizado via demanda espontânea</option>
+                    <option>Teleatendimento psicossocial presencial realizado externamente</option>
+                    <option>Outro tipo de atendimento realizado</option>
+                </select>
+                <div id="inputOculto">
+                    Nº do protocolo do atendimento SISGEP:
+                    <input type="text" class="input-text" />
                 </div>
                 
-                <div class="box-dados">
-                    <label class="question-objetiva" required>Idade</label>
-                    <input type="number" class="input-number" min="0" max="150" id="field" name="idade" required />
-                </div>
-
-                <div class="box-dados">
-                    <label class="question-objetiva" required>Você é uma pessoa com deficiência?</label>
-                    <ul class="radio">
-                        <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
-                        <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
-                        <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
-                    </ul>
-                </div>
-
-                <div class="box-dados">
-                    <label class="question-objetiva" required>Endereço:</label>
-                    <input type="text" class="input-text" id="field" name="endereco" required />
-                </div>
-
-
-            <div class="box-dados">
-                <label class="question-objetiva">Bairro:</label>
-                <select class="select" id="city">
-                    <option value="naodefinido"></option>
-                    <option value="aerolandia">Aerolândia</option>
-                    <option value="aeroporto">Aeroporto</option>
-                    <option value="aldeota">Aldeota</option>
-                    <option value="altodabalanca">Alto da Balança</option>
-                    <option value="alvaroweyne">Álvaro Weyne</option>
-                    <option value="ancuri">Ancuri</option>
-                    <option value="amadeufurtado">Amadeu Furtado</option>
-                    <option value="antoniobezerra">Antonio Bezerra</option>
-                    <option value="aracape">Aracapé</option>
-                    <option value="austrannunes">Austran Nunes</option>
-                    <option value="barradoceara">Barra do Ceará</option>
-                    <option value="barroso">Barroso</option>
-                    <option value="belavista">Bela Vista</option>
-                    <option value="benfica">Benfica</option>
-                    <option value="bomfuturo">Bom Futuro</option>
-                    <option value="boavista">Boa Vista</option>
-                    <option value="bomjardim">Bom Jardim</option>
-                    <option value="bonsucesso">Bonsucesso</option>
-                    <option value="caisdoporto">Cais do Porto</option>
-                    <option value="cajazeiras">Cajazeiras</option>
-                    <option value="cambeba">Cambeba</option>
-                    <option value="canindezinho">Canindezinho</option>
-                    <option value="carlitopamplona">Carlito Pamplona</option>
-                    <option value="centro">Centro</option>
-                    <option value="cidade2">Cidade 2</option>
-                    <option value="cidadedosf">Cidade dos Funcionários</option>
-                    <option value="coac">Coacu</option>
-                    <option value="coco">Coco</option>
-                    <option value="coite">Coité</option>
-                    <option value="conjuntoceara1">Conjunto Ceará 1</option>
-                    <option value="conjuntoceara2">Conjunto Ceará 2</option>
-                    <option value="conjuntoesperanca">Conjunto Esperança</option>
-                    <option value="conjuntopalmeiras">Conjunto Palmeiras</option>
-                    <option value="coutofernandes">Couto Fernandes</option>
-                    <option value="cristoredentor">Cristo Redentor</option>
-                    <option value="curio">Curió</option>
-                    <option value="damas">Damas</option>
-                    <option value="delourdes">De Lourdes</option>
-                    <option value="democritorocha">Demócrito Rocha</option>
-                    <option value="dende">Dendê</option>
-                    <option value="diasmacedo">Dias Macedo</option>
-                    <option value="dionisiotorres">Dionísio Torres</option>
-                    <option value="domlustosa">Dom Lustosa</option>
-                    <option value="dunas">Dunas</option>
-                    <option value="edsonqueiroz">Edson Queiroz</option>
-                    <option value="fariasbrito">Farias Brito</option>
-                    <option value="fatima">Fátima</option>
-                    <option value="floresta">Floresta</option>
-                    <option value="genibau">Genibaú</option>
-                    <option value="guajeru">Guajeru</option>
-                    <option value="guararapes">Guararapes</option>
-                    <option value="granjaportugal">Granja Portugal</option>
-                    <option value="granjalisboa">Granja Lisboa</option>
-                    <option value="henriquejorge">Henrique Jorge</option>
-                    <option value="itaoca">Itaoca</option>
-                    <option value="itaperi">Itaperi</option>
-                    <option value="jacarecanga">Jacarecanga</option>
-                    <option value="jangurussu">Jangurussu</option>
-                    <option value="jardimamerica">Jardim América</option>
-                    <option value="jardimcearense">Jardim Cearense</option>
-                    <option value="jardimguanabara">Jardim Guanabara</option>
-                    <option value="jardimdasoliveiras">Jardim das Oliveiras</option>
-                    <option value="jardimiracema">Jardim Miracema</option>
-                    <option value="joaquimtavora">Joaquim Távora</option>
-                    <option value="joaoxxiii">João XXIII</option>
-                    <option value="josebonifacio">José Bonifácio</option>
-                    <option value="josedealencar">José de Alencar</option>
-                    <option value="lagoaredonda">Lagoa Redonda</option>
-                    <option value="lucianocavalcante">Luciano Cavalcante</option>
-                    <option value="maraponga">Maraponga</option>
-                    <option value="manueldiasbranco">Manuel Dias Branco</option>
-                    <option value="meireles">Meireles</option>
-                    <option value="messejana">Messejana</option>
-                    <option value="montese">Montese</option>
-                    <option value="mondubim">Mondubim</option>
-                    <option value="montecastelo">Monte Castelo</option>
-                    <option value="mourabrasil">Moura Brasil</option>
-                    <option value="mucuripe">Mucuripe</option>
-                    <option value="novomondubim">Novo Mondubim</option>
-                    <option value="otaviobonfim">Otávio Bonfim</option>
-                    <option value="olavooliveira">Olavo Oliveira</option>
-                    <option value="padreandrade">Padre Andrade</option>
-                    <option value="panamericano">Panamericano</option>
-                    <option value="papicu">Papicu</option>
-                    <option value="paupina">Paupina</option>
-                    <option value="parangaba">Parangaba</option>
-                    <option value="parreao">Parreão</option>
-                    <option value="parquearaxa">Parque Araxá</option>
-                    <option value="parquedoisirmaos">Parque Dois Irmãos</option>
-                    <option value="parqueiracema">Parque Iracema</option>
-                    <option value="parquelandia">Parquelândia</option>
-                    <option value="parquemanibura">Parque Manibura</option>
-                    <option value="parquesantamaria">Parque Santa Maria</option>
-                    <option value="parquesaojose">Parque São José</option>
-                    <option value="passare">Passaré</option>
-                    <option value="pedras">Pedras</option>
-                    <option value="pici">Pici</option>
-                    <option value="pirambu">Pirambu</option>
-                    <option value="planaltoayrtonsenna">Planalto Ayrton Senna</option>
-                    <option value="praiadeiracema">Praia de Iracema</option>
-                    <option value="praiadofuturoi">Praia do Futuro I</option>
-                    <option value="praiadofuturoii">Praia do Futuro II</option>
-                    <option value="prefeitojosewalter">Prefeito José Walter</option>
-                    <option value="presidentekennedy">Presidente Kennedy</option>
-                    <option value="presidentevargas">Presidente Vargas</option>
-                    <option value="quintinocunha">Quintino Cunha</option>
-                    <option value="rodolfoteofilo">Rodolfo Teófilo</option>
-                    <option value="sabiguaba">Sabiguaba</option>
-                    <option value="salinas">Salinas</option>
-                    <option value="saobento">São Bento</option>
-                    <option value="saogerardo">São Gerardo</option>
-                    <option value="saojoaodotauape">São João do Tauape</option>
-                    <option value="serrinha">Serrinha</option>
-                    <option value="siqueira">Siqueira</option>
-                    <option value="varjota">Varjota</option>
-                    <option value="vicentepizon">Vicente Pizon</option>
-                    <option value="vilaellery">Vila Ellery</option>
-                    <option value="vilamanuelsatiro">Vila Manuel Sátiro</option>
-                    <option value="vilaperi">Vila Peri</option>
-                    <option value="vilavelha">Vila Velha</option>
-                    <option value="vilauniao">Vila União</option>
+                <label class="question-objetiva" required>Quem procurou ajuda/tratamento?</label>
+                <select id="field" class="select select-ajuda">
+                    <option></option>
+                    <option>Usuário</option>
+                    <option>Usuário e família</option>
+                    <option>Família</option>
+                    <option>Amigos e conhecidos</option>
+                    <option>Promotorias de Justiça</option>
+                    <option>Técnicos de instituições</option>
+                    <option>Outras pessoas</option>
                 </select>
+                <div id="inputOcultoAjuda" required>
+                    Qual(is) outras pessoas procuraram ajuda/tratamento?
+                    <input type="text" class="input-text" />
+                </div>
+                
+                <div class="box-conhecimento">
+                    <label class="question-objetiva" required>Como ficou sabendo do serviço?</label>
+                    <input type="text" class="input-text" id="field" />
+                </div>  
+            </section>
+        
+            <section class="parte-dois">
+                <h3>Dados Sociodemográficos</h3>
+                <div class="box-dados-iniciais">
+                    <div class="box-dados">
+                        <label class="question-objetiva" required>Gênero</label>
+                        <select id="select-genero" class="select select-outro" onclick="selectGenero()" name="genero">
+                            <option value=""></option>
+                            <option value="masculino">Homem</option>
+                            <option value="feminino">Mulher</option>
+                            <option value="outrogenero"> Outro </option>
+                        </select>
+
+                        <div id="outroGenero" style="display: none;">
+                            <label for="input-outro-genero">Qual gênero?</label>
+                            <input type="text" id="input-outro-genero" class="input-text" />
+                        </div>
+                    </div>
+
+                    <div class="box-dados">
+                        <label class="question-objetiva" required>Você é gestante?</label>
+                        <ul class="radio">
+                            <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
+                            <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
+                            <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
+                        </ul>
+                    </div>
+                    
+                    <div class="box-dados">
+                        <label class="question-objetiva" required>Idade</label>
+                        <input type="number" class="input-number" min="0" max="150" id="field" name="idade" required />
+                    </div>
+
+                    <div class="box-dados">
+                        <label class="question-objetiva" required>Você é uma pessoa com deficiência?</label>
+                        <ul class="radio">
+                            <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
+                            <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
+                            <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
+                        </ul>
+                    </div>
+
+                    <div class="box-dados">
+                        <label class="question-objetiva" required>Endereço:</label>
+                        <input type="text" class="input-text" id="field" name="endereco" required />
+                    </div>
+
 
                 <div class="box-dados">
-                    <label class="question-objetiva" required>Em situação de rua</label>
-                    <ul class="radio">
-                        <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
-                        <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
-                        <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
-                    </ul>
-                </div>
+                    <label class="question-objetiva">Bairro:</label>
+                    <select class="select" id="city">
+                        <option value="naodefinido"></option>
+                        <option value="aerolandia">Aerolândia</option>
+                        <option value="aeroporto">Aeroporto</option>
+                        <option value="aldeota">Aldeota</option>
+                        <option value="altodabalanca">Alto da Balança</option>
+                        <option value="alvaroweyne">Álvaro Weyne</option>
+                        <option value="ancuri">Ancuri</option>
+                        <option value="amadeufurtado">Amadeu Furtado</option>
+                        <option value="antoniobezerra">Antonio Bezerra</option>
+                        <option value="aracape">Aracapé</option>
+                        <option value="austrannunes">Austran Nunes</option>
+                        <option value="barradoceara">Barra do Ceará</option>
+                        <option value="barroso">Barroso</option>
+                        <option value="belavista">Bela Vista</option>
+                        <option value="benfica">Benfica</option>
+                        <option value="bomfuturo">Bom Futuro</option>
+                        <option value="boavista">Boa Vista</option>
+                        <option value="bomjardim">Bom Jardim</option>
+                        <option value="bonsucesso">Bonsucesso</option>
+                        <option value="caisdoporto">Cais do Porto</option>
+                        <option value="cajazeiras">Cajazeiras</option>
+                        <option value="cambeba">Cambeba</option>
+                        <option value="canindezinho">Canindezinho</option>
+                        <option value="carlitopamplona">Carlito Pamplona</option>
+                        <option value="centro">Centro</option>
+                        <option value="cidade2">Cidade 2</option>
+                        <option value="cidadedosf">Cidade dos Funcionários</option>
+                        <option value="coac">Coacu</option>
+                        <option value="coco">Coco</option>
+                        <option value="coite">Coité</option>
+                        <option value="conjuntoceara1">Conjunto Ceará 1</option>
+                        <option value="conjuntoceara2">Conjunto Ceará 2</option>
+                        <option value="conjuntoesperanca">Conjunto Esperança</option>
+                        <option value="conjuntopalmeiras">Conjunto Palmeiras</option>
+                        <option value="coutofernandes">Couto Fernandes</option>
+                        <option value="cristoredentor">Cristo Redentor</option>
+                        <option value="curio">Curió</option>
+                        <option value="damas">Damas</option>
+                        <option value="delourdes">De Lourdes</option>
+                        <option value="democritorocha">Demócrito Rocha</option>
+                        <option value="dende">Dendê</option>
+                        <option value="diasmacedo">Dias Macedo</option>
+                        <option value="dionisiotorres">Dionísio Torres</option>
+                        <option value="domlustosa">Dom Lustosa</option>
+                        <option value="dunas">Dunas</option>
+                        <option value="edsonqueiroz">Edson Queiroz</option>
+                        <option value="fariasbrito">Farias Brito</option>
+                        <option value="fatima">Fátima</option>
+                        <option value="floresta">Floresta</option>
+                        <option value="genibau">Genibaú</option>
+                        <option value="guajeru">Guajeru</option>
+                        <option value="guararapes">Guararapes</option>
+                        <option value="granjaportugal">Granja Portugal</option>
+                        <option value="granjalisboa">Granja Lisboa</option>
+                        <option value="henriquejorge">Henrique Jorge</option>
+                        <option value="itaoca">Itaoca</option>
+                        <option value="itaperi">Itaperi</option>
+                        <option value="jacarecanga">Jacarecanga</option>
+                        <option value="jangurussu">Jangurussu</option>
+                        <option value="jardimamerica">Jardim América</option>
+                        <option value="jardimcearense">Jardim Cearense</option>
+                        <option value="jardimguanabara">Jardim Guanabara</option>
+                        <option value="jardimdasoliveiras">Jardim das Oliveiras</option>
+                        <option value="jardimiracema">Jardim Miracema</option>
+                        <option value="joaquimtavora">Joaquim Távora</option>
+                        <option value="joaoxxiii">João XXIII</option>
+                        <option value="josebonifacio">José Bonifácio</option>
+                        <option value="josedealencar">José de Alencar</option>
+                        <option value="lagoaredonda">Lagoa Redonda</option>
+                        <option value="lucianocavalcante">Luciano Cavalcante</option>
+                        <option value="maraponga">Maraponga</option>
+                        <option value="manueldiasbranco">Manuel Dias Branco</option>
+                        <option value="meireles">Meireles</option>
+                        <option value="messejana">Messejana</option>
+                        <option value="montese">Montese</option>
+                        <option value="mondubim">Mondubim</option>
+                        <option value="montecastelo">Monte Castelo</option>
+                        <option value="mourabrasil">Moura Brasil</option>
+                        <option value="mucuripe">Mucuripe</option>
+                        <option value="novomondubim">Novo Mondubim</option>
+                        <option value="otaviobonfim">Otávio Bonfim</option>
+                        <option value="olavooliveira">Olavo Oliveira</option>
+                        <option value="padreandrade">Padre Andrade</option>
+                        <option value="panamericano">Panamericano</option>
+                        <option value="papicu">Papicu</option>
+                        <option value="paupina">Paupina</option>
+                        <option value="parangaba">Parangaba</option>
+                        <option value="parreao">Parreão</option>
+                        <option value="parquearaxa">Parque Araxá</option>
+                        <option value="parquedoisirmaos">Parque Dois Irmãos</option>
+                        <option value="parqueiracema">Parque Iracema</option>
+                        <option value="parquelandia">Parquelândia</option>
+                        <option value="parquemanibura">Parque Manibura</option>
+                        <option value="parquesantamaria">Parque Santa Maria</option>
+                        <option value="parquesaojose">Parque São José</option>
+                        <option value="passare">Passaré</option>
+                        <option value="pedras">Pedras</option>
+                        <option value="pici">Pici</option>
+                        <option value="pirambu">Pirambu</option>
+                        <option value="planaltoayrtonsenna">Planalto Ayrton Senna</option>
+                        <option value="praiadeiracema">Praia de Iracema</option>
+                        <option value="praiadofuturoi">Praia do Futuro I</option>
+                        <option value="praiadofuturoii">Praia do Futuro II</option>
+                        <option value="prefeitojosewalter">Prefeito José Walter</option>
+                        <option value="presidentekennedy">Presidente Kennedy</option>
+                        <option value="presidentevargas">Presidente Vargas</option>
+                        <option value="quintinocunha">Quintino Cunha</option>
+                        <option value="rodolfoteofilo">Rodolfo Teófilo</option>
+                        <option value="sabiguaba">Sabiguaba</option>
+                        <option value="salinas">Salinas</option>
+                        <option value="saobento">São Bento</option>
+                        <option value="saogerardo">São Gerardo</option>
+                        <option value="saojoaodotauape">São João do Tauape</option>
+                        <option value="serrinha">Serrinha</option>
+                        <option value="siqueira">Siqueira</option>
+                        <option value="varjota">Varjota</option>
+                        <option value="vicentepizon">Vicente Pizon</option>
+                        <option value="vilaellery">Vila Ellery</option>
+                        <option value="vilamanuelsatiro">Vila Manuel Sátiro</option>
+                        <option value="vilaperi">Vila Peri</option>
+                        <option value="vilavelha">Vila Velha</option>
+                        <option value="vilauniao">Vila União</option>
+                    </select>
 
-            <label required>Número de crianças que residem na casa (usuário ou familiar): </label>
-            <div class="inputs-numbers--kids" name="kidscasa">
-                <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 0-5 anos</p>
-                <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 6-11 anos</p>
-                <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 12-17 anos</p>
-            </div>
-        </section>
+                    <div class="box-dados">
+                        <label class="question-objetiva" required>Em situação de rua</label>
+                        <ul class="radio">
+                            <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
+                            <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
+                            <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
+                        </ul>
+                    </div>
+
+                <label required>Número de crianças que residem na casa (usuário ou familiar): </label>
+                <div class="inputs-numbers--kids" name="kidscasa">
+                    <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 0-5 anos</p>
+                    <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 6-11 anos</p>
+                    <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 12-17 anos</p>
+                </div>
+            </section>
         
         <section class="parte-tres">
             <h3>Caracterização do Usuário e da Situação Problema</h3>
@@ -1318,7 +1320,7 @@ if (isset($_POST['remove'])) {
                         
                         <ul>
                         <input type="checkbox" id="field"> Outras(as) <strong>Quais?</strong> <input type="text" class="input-text" id="field"></li>
-                        </ul>
+                    </ul>
                 </div>
 
                 <label class="question-objetiva">Qual é a primeira substância que você fez uso?</label>
@@ -1404,12 +1406,15 @@ if (isset($_POST['remove'])) {
                 <label for="">Você autoriza que os dados coletados sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label>
 
                 <ul class="radio">
-                    <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim
-                    </li>
-                <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>    
+                    <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
+                    <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>    
                 </ul>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+
+        </div>    
+    
+        
     </form>
 </body>
 </html>
