@@ -83,7 +83,30 @@ a:hover {
     
 }
 
-.two-questions {
+.more-questions {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.one-question {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.editable {
+    border: 1px solid #ccc;
+    min-height: 20px;
+    width: 300px;
+    padding: 5px;
+}
+
+.editable:focus {
+    outline: none;
+    border-color: blue;
 }

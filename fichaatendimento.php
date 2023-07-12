@@ -1048,77 +1048,90 @@ if (isset($_POST['remove'])) {
             <div class="card bg-light mb-3">
                 <div class="card-header"><h4>Ficha de acolhimento individual</h4></div>
         
-                    <div class="two-questions">
+                    <div class="more-questions">
                         <div class="one-question">
                             <label>Nº da ficha:</label>
-                            <input class="input-text" name="numero_da_ficha"/>
+                            <input class="input-text editable" name="numero_da_ficha" contenteditable="true" />
                         </div>
                         
                         <div class="one-question">
                             <label>CPF:</label>
-                            <input class="input-text" name="cpf" />
+                            <input class="input-text editable" name="cpf" contenteditable="true" placeholder="000.000.000-00" />
                         </div>
                     </div>
                         
                
-                    <label>Qual é o tipo de atendimento realizado?</label>
-                        <select name="select-atendimento" class="select" required>
-                            <option></option>
-                            <option>Teleatendimento psicossocial via SISGEP</option>
-                            <option>Teleatendimento psicossocial realizado via demanda espontânea</option>
-                            <option>Teleatendimento psicossocial presencial realizado externamente</option>
-                            <option>Outro tipo de atendimento realizado</option>
-                        </select>
-                    
                 
-                    <label required>Quem procurou ajuda/tratamento?</label>
-                        <select class="select">
-                            <option></option>
-                            <option>Usuário</option>
-                            <option>Usuário e família</option>
-                            <option>Família</option>
-                            <option>Amigos e conhecidos</option>
-                            <option>Promotorias de Justiça</option>
-                            <option>Técnicos de instituições</option>
-                            <option>Outras pessoas</option>
-                        </select>
                     
-                    <label required>Qual(is) outras pessoas procuraram ajuda/tratamento?</label>
-                    <input type="text" class="input-text" />
+
+                         <div class="one-question">
+                            <label>Qual é o tipo de atendimento realizado?</label>
+                            <select name="select-atendimento" class="select editable" contenteditable="true" required>
+                                <option></option>
+                                <option>Teleatendimento psicossocial via SISGEP</option>
+                                <option>Teleatendimento psicossocial realizado via demanda espontânea</option>
+                                <option>Teleatendimento psicossocial presencial realizado externamente</option>
+                                <option>Outro tipo de atendimento realizado</option>
+                            </select>
+                        </div>
+
+                        <div class="one-question">
+                            <label required>Quem procurou ajuda/tratamento?</label>
+                                <select class="select editable" contenteditable="true">
+                                    <option></option>
+                                    <option>Usuário</option>
+                                    <option>Usuário e família</option>
+                                    <option>Família</option>
+                                    <option>Amigos e conhecidos</option>
+                                    <option>Promotorias de Justiça</option>
+                                    <option>Técnicos de instituições</option>
+                                    <option>Outras pessoas</option>
+                                </select>
+                        </div>
+    
+                        
+                        <div class="one-question">
+                            <label required>Como ficou sabendo do serviço?</label>
+                            <input type="text" class="input-text editable" contenteditable="true"/>
+                        </div>                        
                     
-                    
-                    <label required>Como ficou sabendo do serviço?</label>
-                    <input type="text" class="input-text" />
                      
-                
             
                 
                     <h5>Dados Sociodemográficos</h5>
                     
-                    <label class="question-obj" required>Gênero</label>
-                        <select class="select" name="genero">
-                            <option value=""></option>
-                            <option value="masculino">Homem</option>
-                            <option value="feminino">Mulher</option>
-                            <option value="outrogenero"> Outro </option>
-                        </select>
+                    <div class="more-questions">
+                        <div class="one-question">
+                            <label required>Gênero</label>
+                                <select class="select" name="genero">
+                                    <option value=""></option>
+                                    <option value="masculino">Homem</option>
+                                    <option value="feminino">Mulher</option>
+                                    <option value="outrogenero"> Outro </option>
+                                </select>
+                        </div>
 
-                    <label>Qual gênero?</label>
-                    <input type="text" class="input-text" />
-                            
+                        <div class="one-question">
+                            <label>Se outro gênero, qual gênero?</label>
+                            <input type="text" class="input-text editable" contenteditable="true"/>
+                        </div>
+                                
 
-                        
-                    <label required>Você é gestante?</label>
-                        <ul class="radio">
-                            <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
-                            <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
-                            <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
-                        </ul>
+                        <div class="one-question">
+                            <label required>Você é gestante?</label>
+                                <ul class="radio">
+                                    <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim</li>
+                                    <li><input type="radio"  class="radio-input" value="nao" id="field" name='radio'/> Não</li>
+                                    <li><input type="radio"  class="radio-input" value="naosei" id="field" name='radio'/> Não sabe/não informou</li>    
+                                </ul>
+                        </div>
+
+                    </div>
                        
                         
                         
                     <label required>Idade</label>
-                    <input type="number" class="input-number" min="0" max="150" id="field" name="idade" required />
+                    <input type="number" class="input-number editable" contenteditable="true" min="0" max="150" id="field" name="idade" required />
                         
 
                         
@@ -1131,12 +1144,12 @@ if (isset($_POST['remove'])) {
                         
 
                     <label required>Endereço:</label>
-                    <input type="text" class="input-text" id="field" name="endereco" required />
+                    <input type="text" class="input-text editable" contenteditable="true" id="field" name="endereco" required />
                         
 
 
                     <label>Bairro:</label>
-                        <select class="select" id="city">
+                        <select class="select editable" contenteditable="true">
                             <option value="naodefinido"></option>
                             <option value="aeroporto">Aeroporto</option>
                             <option value="aerolandia">Aerolândia</option>
@@ -1272,9 +1285,9 @@ if (isset($_POST['remove'])) {
                         
 
                         <label required>Número de crianças que residem na casa (usuário ou familiar): </label>
-                            <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 0-5 anos</p>
-                            <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 6-11 anos</p>
-                            <input type="number" min="0" class="input-number" id="field" /> <p>Crianças de 12-17 anos</p>
+                            <input type="number" min="0" class="input-number editable" contenteditable="true" id="field" /> <p>Crianças de 0-5 anos</p>
+                            <input type="number" min="0" class="input-number editable" contenteditable="true" id="field" /> <p>Crianças de 6-11 anos</p>
+                            <input type="number" min="0" class="input-number editable" contenteditable="true" id="field" /> <p>Crianças de 12-17 anos</p>
                         
                         <h5>Caracterização do Usuário e da Situação Problema</h5>
                         <label>Qual(is) tipo(s) de substâncias psicoativas já fez uso na vida?</label>
@@ -1304,22 +1317,22 @@ if (isset($_POST['remove'])) {
                                     </ul>
                                     
                                     <ul>
-                                    <input type="checkbox" id="field"> Outras(as) <strong>Quais?</strong> <input type="text" class="input-text" id="field"></li>
+                                    <input type="checkbox" id="field"> Outras(as) <strong>Quais?</strong> <input type="text" class="input-text editable" contenteditable="true" id="field"></li>
                                 </ul>
                             
 
                         <label required>Qual é a primeira substância que você fez uso?</label>
-                        <input type="text" class="input-text" id="field">
+                        <input type="text" class="input-text editable" contenteditable="true" id="field">
                         <label>Usa há quanto tempo?</label>
-                        <input type="text" class="input-text" id="field">
+                        <input type="text" class="input-text editable" contenteditable="true" id="field">
                         <label>Quanto tempo após iniciar o uso procurou tratamento pela primeira vez?</label>
-                        <input type="text" class="input-text" id="field">
+                        <input type="text" class="input-text editable" contenteditable="true" id="field">
                         <label>Onde procurou ajuda/tratamento pela primeira vez?</label>
-                        <input type="text" class="input-text" id="field">
+                        <input type="text" class="input-text editable" contenteditable="true" id="field">
                         
                         
                         <label>Qual ou quais órgãos/instituições que faz atendimento a usuários de álcool e/ou outras drogas você já foi atendido?</label>
-                        <input type="text" class="input-text" id="field">
+                        <input type="text" class="input-text editable" contenteditable="true" id="field">
 
                         <label>Qual ou quais substâncias faz uso atualmente</label>
                             <ul>
@@ -1379,12 +1392,13 @@ if (isset($_POST['remove'])) {
                             </ul>
 
                             <label>Relato do atendimento</label>
-                            <input type="text" class="input-text" id="field">
+                            <input type="text" class="input-text editable" contenteditable="true" id="field">
                         
                             <label>Encaminhamento</label>
-                            <input type="text" class="input-text" id="field">
+                            <input type="text" class="input-text editable" contenteditable="true" id="field">
 
-                            <p>Fortaleza</p> <input type="datetime-local" class="input-text"/>
+                            <p>Fortaleza</p> 
+                            <input type="datetime-local" class="input-text editable" contenteditable="true"/>
                             <p>Profissional responsável pelo acolhimento/encaminhamento</p> <input type="text" class="input-text" id="field">
 
                             <label for="">Você autoriza que os dados pessoais e sensíveis coletados nesse atendimento sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label>
