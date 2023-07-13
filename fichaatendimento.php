@@ -1064,7 +1064,7 @@ if (isset($_POST['remove'])) {
                 
                     
 
-                         <div class="one-question">
+                        <div class="one-question">
                             <label>Qual é o tipo de atendimento realizado?</label>
                             <select name="select-atendimento" class="select editable" contenteditable="true" required>
                                 <option></option>
@@ -1399,7 +1399,8 @@ if (isset($_POST['remove'])) {
 
                             <p>Fortaleza</p> 
                             <input type="datetime-local" class="input-text editable" contenteditable="true"/>
-                            <p>Profissional responsável pelo acolhimento/encaminhamento</p> <input type="text" class="input-text" id="field">
+                            <p>Profissional responsável pelo acolhimento/encaminhamento</p> 
+                            <input type="text" class="input-text editable" contenteditable="true" id="field">
 
                             <label for="">Você autoriza que os dados pessoais e sensíveis coletados nesse atendimento sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label>
 
