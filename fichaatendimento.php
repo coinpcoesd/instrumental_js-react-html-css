@@ -1334,28 +1334,39 @@ if (isset($_POST['remove'])) {
                         <label>Qual ou quais órgãos/instituições que faz atendimento a usuários de álcool e/ou outras drogas você já foi atendido?</label>
                         <input type="text" class="input-text editable" contenteditable="true" id="field">
 
-                        <label>Qual ou quais substâncias faz uso atualmente</label>
-                            <ul>
-                                <li><input type="checkbox" id="field"> CAPS AD</li>
-                                <li><input type="checkbox" id="field"> Unidade básica de saúde</li>
-                                <li><input type="checkbox" id="field"> SHR AD</li>
-                                <li><input type="checkbox" id="field"> Hospital Psiquiátrico</li>
-                                <li><input type="checkbox" id="field"> Comunidade terapêutica</li>
-                            </ul>
-                            <ul>
-                                <li><input type="checkbox" id="field"> Instituições religiosas</li>
-                                <li><input type="checkbox" id="field"> Atendimento Psicológico</li>
-                                <li><input type="checkbox" id="field"> Atendimento Psiquiátrico</li>
-                                <li><input type="checkbox" id="field"> Grupos de ajuda mutua</li>
-                                <li><input type="checkbox" id="field"> Unidade de acolhimento</li>
-                            </ul>
 
-                            <ul>
-                                <li><input type="checkbox"> Outro(s)
-                                    <strong>Qual(is)</strong>
-                                    <input type="text" class="input-text" id="field"></li> 
-                            </ul>
-                            
+                        
+                        <label>Qual ou quais substâncias faz uso atualmente</label>
+
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <li><input type="checkbox" id="field"> CAPS AD</li>
+                                    <li><input type="checkbox" id="field"> Unidade básica de saúde</li>
+                                    <li><input type="checkbox" id="field"> SHR AD</li>
+                                    <li><input type="checkbox" id="field"> Hospital Psiquiátrico</li>
+                                    <li><input type="checkbox" id="field"> Comunidade terapêutica</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><input type="checkbox" id="field"> Instituições religiosas</li>
+                                    <li><input type="checkbox" id="field"> Atendimento Psicológico</li>
+                                    <li><input type="checkbox" id="field"> Atendimento Psiquiátrico</li>
+                                    <li><input type="checkbox" id="field"> Grupos de ajuda mútua</li>
+                                    <li><input type="checkbox" id="field"> Unidade de acolhimento</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><input type="checkbox"> Outro(s)
+                                        <strong>Qual(is)</strong>
+                                        <input type="text" class="input-text" id="field">
+                                    </li> 
+                                </ul>
+                            </div>
+                        </div>
+
                             <label>Já pensou em suicídio alguma vez?</label>
                                 <ul class="radio">
                                     <li><input type="radio" class="radio-input" value="sim" id="field" name='radio'/> Sim
@@ -1401,6 +1412,8 @@ if (isset($_POST['remove'])) {
                             <input type="datetime-local" class="input-text editable" contenteditable="true"/>
                             <p>Profissional responsável pelo acolhimento/encaminhamento</p> 
                             <input type="text" class="input-text editable" contenteditable="true" id="field">
+
+                            <br > 
 
                             <label for="">Você autoriza que os dados pessoais e sensíveis coletados nesse atendimento sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label>
 

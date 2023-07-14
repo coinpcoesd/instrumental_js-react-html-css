@@ -52,10 +52,10 @@ if(isset( $_POST['login'])) {
 <div class="container">
     <div class="card">
         <div class="card-header bg-light mb-3">Registre-se</div>
-        <div class="card-body"> 
+        <div class="card-body col-md-5 offset-md-3"> 
             <form action="register.php" method="POST">
 
-                <div class="form-group">
+                <div class="form-group m-1">
                     <label for="userEmail">User Email</label>
                     <input required type="email" name="userEmail" class="form-control" />
                 <br />
@@ -63,13 +63,13 @@ if(isset( $_POST['login'])) {
                 <p style="color: red"> <?php echo $wrongLogin ?> </p>
                 <?php } $wrongLogin ?>
             </div>
-
-                <div class="form-group">
+ 
+                <div class="form-group m-1">
                     <label for="password">Password</label>
                     <input required type="password" name="password" class="form-control" />
                 </div>
 
-                <button name="register" class="btn btn-primary" type="submit">Register</button>
+                <button name="register" class="btn btn-primary m-3" type="submit">Login</button>
 
             </form>
         </div>

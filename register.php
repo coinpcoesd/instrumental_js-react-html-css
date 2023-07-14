@@ -55,17 +55,17 @@ if(isset($_POST['register'])) {
 <div class="container">
     <div class="card">
         <div class="card-header bg-light mb-3">Registre-se</div>
-        <div class="card-body"> 
+        <div class="card-body col-md-6 offset-md-3"> 
             <form action="register.php" method="POST">
 
                 <div class="form-group">
-                    <label for="userName">User Name</label>
-                    <input required type="text" name="userName" class="form-control" />
+                    <label for="userName">Username:</label>
+                    <input required type="text" name="userName" class="form-control m-1" />
                 </div>
 
                 <div class="form-group">
-                    <label for="userEmail">User Email</label>
-                    <input required type="email" name="userEmail" class="form-control" />
+                    <label for="userEmail">E-mail:</label>
+                    <input required type="email" name="userEmail" class="form-control m-1" placeholder="digite seu melhor e-mail" />
                     <br />
                     <?php if(isset($emailTaken)) { ?> 
                     <p style="color: red"> <?php echo $emailTaken?> </p>
@@ -73,11 +73,21 @@ if(isset($_POST['register'])) {
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Senha: </label>
                     <input required type="password" name="password" class="form-control" />
                 </div>
 
-                <button name="register" class="btn btn-primary" type="submit">Register</button>
+            <div class="form-group row m-3">
+                <div class="col-auto">
+                    <input type="checkbox" class="form-check-input">
+                </div>
+                <div class="col">
+                    <p>Concordo com os <a href="./config/termo.pdf">termos de uso</a> do instrumental.</p>
+                </div>
+            </div>
+
+
+                <button name="register" class="btn btn-primary m-3" type="submit">Registrar</button>
 
             </form>
         </div>

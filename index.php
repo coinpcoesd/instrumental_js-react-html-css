@@ -23,20 +23,20 @@ if( isset($_SESSION['userId'])) {
 <?php require('./inc/header.html'); ?>
 
 <div class="container">
-    <div class="card bg-light mb-3">
+    <div class="card bg-light mb-3 col-md-5 offset-md-3">
         <div class="card-header">
             <?php if(isset($user)) { ?>
-                <h5>Seja bem-vindo, <?php echo $user->name ?></h5>
+                <h6>Seja bem-vindo, <?php echo $user->name ?></h6>
            <?php } else { ?>
-                <h5>Seja bem-vindo, visitante</h5>
+                <h6>Seja bem-vindo, visitante</h6>
           <?php } ?>
         </div>
         <div class="card-body">
 
             <?php if(isset($user)) { ?>
-                <h5>Esse conteúdo só pode ser visualizado por pessoas logadas. Faça seu <a href="login.php">login</a> e tenha acesso. </h5>
+                <h6>Esse conteúdo só pode ser visualizado por pessoas logadas. Faça seu <a href="login.php">login</a> e tenha acesso. </h6>
            <?php } else { ?>
-                <h4>Por favor, faça <a href="login.php">login</a> ou <a href="register.php">registre-se</a> para ter acesso a todo conteúdo.</h4>
+                <h7>Por favor, faça <a href="login.php">login</a> ou <a href="register.php">registre-se</a> para ter acesso a todo conteúdo.</h7>
             <?php } ?>
         </div>
     </div>

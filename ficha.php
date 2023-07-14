@@ -274,101 +274,121 @@
                             
     
                             <div class="mb-3">
-                                <label class="form-label">Número de crianças que residem na casa (usuário ou familiar): </label>
-                                <input type="number" min="0" class="form-control" />
-                                <p>Crianças de 0-5 anos</p>
-                                <input type="number" min="0" class="form-control" />
-                                <p>Crianças de 6-11 anos</p>
-                                <input type="number" min="0" class="form-control" />
-                                <p>Crianças de 12-17 anos</p>
+                                <label class="form-label">Número de crianças que residem na casa (usuário ou familiar):</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="number" min="0" class="form-control" />
+                                    </div>
+                                    <div class="col">
+                                        <p>Crianças de 0-5 anos</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="number" min="0" class="form-control" />
+                                    </div>
+                                    <div class="col">
+                                        <p>Crianças de 6-11 anos</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="number" min="0" class="form-control" />
+                                    </div>
+                                    <div class="col">
+                                        <p>Crianças de 12-17 anos</p>
+                                    </div>
+                                </div>
                             </div>
+
             
                             <h5 class="mb-3">Caracterização do Usuário e da Situação Problema</h5>
             
                             <div class="mb-3">
                                 <label class="form-label">Qual(is) tipo(s) de substâncias psicoativas já fez uso na vida?</label>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Álcool</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Tabaco, cigarro, vaping</label>
-                                    </li>
+                                <div class="row">
+                                    <div class="col">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label class="form-check-label" for="field">Álcool</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label class="form-check-label" for="field">Tabaco, cigarro, vaping</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field"> 
+                                                <label for="field" class="form-check-label">Crack(Mesclado, pitio, raspa)</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Macoha(Shank, haxixe, k2)</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Cocaína(Merla, oxi...)</label>
+                                            </li>
+                                            <li class="list-group-item">    
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Solventes(Cola, loló, lança perfume, anti-respingo de solda)</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Tranquilizantes(Diazepam, rivotril, ripinol...)</label>
+                                            </li>
 
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field"> 
-                                        <label for="field" class="form-check-label">Crack(Mesclado, pitio, raspa)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Macoha(Shank, haxixe, k2)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Cocaína(Merla, oxi...)</label>
-                                    </li>
-
-                                    <li class="list-group-item">    
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Solventes(Cola, loló, lança perfume, anti-respingo de solda)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Tranquilizantes(Diazepam, rivotril, ripinol...)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Anestésicos(Boa noite cinderela, ketamina)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Alucinógenos sintéticos(LSD, Doce, DMT, aranha)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Alucinógenos naturais(Cogumelo, zabumba, Ahayuaska, Sto Daime, Ibogaína)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Anfetaminas(Rebite, speed, ritalina)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Opióides(Remédios para dor, morfina, metadona, tramal)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Ecstasy(Bala, MDMA, MD, Mandy)</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Heroína</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Não sabe/Não respondeu</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Outro</label>
-                                    </li>
-                            
-                                </ul>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Anestésicos(Boa noite cinderela, ketamina)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="list-group">
+                                            
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Alucinógenos sintéticos(LSD, Doce, DMT, aranha)</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Alucinógenos naturais(Cogumelo, zabumba, Ahayuaska, Sto Daime, Ibogaína)</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Anfetaminas(Rebite, speed, ritalina)</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Opióides(Remédios para dor, morfina, metadona, tramal)</label>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Ecstasy(Bala, MDMA, MD, Mandy)</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Heroína</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Não sabe/Não respondeu</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label for="field" class="form-check-label">Outro</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+
             
                             <div class="mb-3">
                                 <label class="form-label">Qual é a primeira substância que você fez uso?</label>
@@ -398,60 +418,60 @@
                             
         
                             <div class="mb-3">
-                                <label class="form-label">Qual ou quais órgãos/instituições que faz atendimento a usuários de álcool e/ou outras drogas você já foi atendido?
-                                </label>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">CAPS AD</label>
-                                    </li>
+                            <label class="form-label">Qual ou quais órgãos/instituições que faz atendimento a usuários de álcool e/ou outras drogas você já foi atendido?</label>
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label class="form-check-label" for="field">CAPS AD</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label class="form-check-label" for="field">Unidade básica de saúde</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">SHR AD</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">Hospital Psiquiátrico</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">Comunidade terapêutica</label>
+                                        </li>
+                                    </ul>
+                                </div>   
 
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Unidade básica de saúde</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">SHR AD</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Hospital Psiquiátrico</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Comunidade terapêutica</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Instituições religiosas</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Atendimento Psicológico</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Atendimento Psiquiátrico</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Grupos de ajuda mutua</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label for="field" class="form-check-label">Unidade de acolhimento</label>
-                                    </li>
-                                </ul>
+                                <div class="col">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">Instituições religiosas</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">Atendimento Psicológico</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">Atendimento Psiquiátrico</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">Grupos de ajuda mutua</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="checkbox" id="field">
+                                            <label for="field" class="form-check-label">Unidade de acolhimento</label>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                        </div>
+
 
                             <div><label class="form-label">Já pensou em suicídio alguma vez? </label></div>
                             <div class="mb-3">
@@ -484,33 +504,38 @@
             
                             <div class="mb-3">
                                 <label class="form-label">Qual é a expectativa do usuário e/ou da família em relação a esse atendimento?</label>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Internação voluntária</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Internação involuntária</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Orientação</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Suporte Psicológico</label>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <input type="checkbox" id="field">
-                                        <label class="form-check-label" for="field">Tratamento na rede intersetorial álcool e drogas municipal</label>
-                                    </li>
-
-
-                                </ul>
+                                <div class="row">
+                                    <div class="col">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label class="form-check-label" for="field">Internação voluntária</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label class="form-check-label" for="field">Internação involuntária</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label class="form-check-label" for="field">Orientação</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label class="form-check-label" for="field">Suporte Psicológico</label>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <input type="checkbox" id="field">
+                                                <label class="form-check-label" for="field">Tratamento na rede intersetorial álcool e drogas municipal</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+
 
                             <div><label class="form-label">Gostaria de atendimento presencial na CPDrogas? </label></div>
                             <div class="mb-3">
@@ -545,7 +570,8 @@
                             <p>Profissional responsável pelo acolhimento/encaminhamento</p>
                             <input type="text" class="form-control" />
 
-                            <div><label class="form-label">Você autoriza que os dados pessoais e sensíveis coletados nesse atendimento sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label></div>
+                            <div class="m-3">
+                            <label class="form-label">Você autoriza que os dados pessoais e sensíveis coletados nesse atendimento sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="radio" class="form-check-input" value="sim" id="field1">

@@ -5,7 +5,7 @@
         <div class="card-header">
             <h5>Pesquise aqui!</h5>
         </div>
-        <div class="card-body text-center">
+        <div class="card-body col-md-5 offset-md-3 text-center">
             <div class="row">
                 <div class="col">
                     <input type="search" name="" id="" placeholder="digite aqui :)" class="form-control" />

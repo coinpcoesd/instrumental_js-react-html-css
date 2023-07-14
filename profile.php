@@ -28,7 +28,7 @@ if(isset($_SESSION['userId'])) {
 <div class="container">
     <div class="card">
         <div class="card-header bg-light mb-3">Atualize seus dados</div>
-        <div class="card-body"> 
+        <div class="card-body text-center col-md-5 offset-md-3"> 
 
             <form action="profile.php" method="POST">
             <?php if(isset($user)) { ?> 
