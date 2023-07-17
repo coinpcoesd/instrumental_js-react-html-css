@@ -28,18 +28,18 @@
                         
                             <div class="form-group form-inline">
                                 <label for="ficha">Número da Ficha:</label>
-                                <input type="text" class="form-control" id="ficha" placeholder="Digite o número da ficha">
+                                <input type="text" class="form-control" id="ficha" placeholder="Digite o número da ficha" name="numero_da_ficha">
                             </div>
 
                             <div class="form-group form-inline">
                                 <label for="cpf">CPF:</label>
-                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" name="cpf">
                             </div>
                         
                     
                             <div class="mb-3">
                                 <label class="form-label">Qual é o tipo de atendimento realizado?</label>
-                                <select name="select-atendimento" class="form-select">
+                                <select name="select-atendimento" class="form-select" >
                                     <option></option>
                                     <option>Teleatendimento psicossocial via SISGEP</option>
                                     <option>Teleatendimento psicossocial realizado via demanda espontânea</option>
@@ -50,7 +50,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label">Quem procurou ajuda/tratamento?</label>
-                                <select class="form-select">
+                                <select class="form-select" name="quem_procurou_ajuda">
                                     <option></option>
                                     <option>Usuário</option>
                                     <option>Usuário e família</option>
@@ -64,7 +64,7 @@
     
                             <div class="mb-3">
                                 <label class="form-label">Como ficou sabendo do serviço?</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="como_ficou_sabendo" />
                             </div>
     
                             <h5 class="mb-3">Dados Sociodemográficos</h5>
@@ -81,21 +81,21 @@
     
                             <div class="mb-3">
                                 <label class="form-label">Se outro gênero, qual gênero?</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="genero" />
                             </div>
                                     
                             <div><label class="form-label">Você é gestante?</label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="sim" id="field1">
+                                    <input type="radio" name="radio gestante" class="form-check-input" value="sim" id="field1">
                                     <label class="form-check-label" for="field1">Sim</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="nao" id="field2">
+                                    <input type="radio" name="radio gestante" class="form-check-input" value="nao" id="field2">
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio gestante" class="form-check-input" value="naosei" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
@@ -109,15 +109,15 @@
                             <div><label class="form-label">Você é uma pessoa com deficiência?</label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="sim" id="field1">
+                                    <input type="radio" name="radio pcd" class="form-check-input" value="sim" id="field1">
                                     <label class="form-check-label" for="field1">Sim</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="nao" id="field2">
+                                    <input type="radio" name="radio pcd" class="form-check-input" value="nao" id="field2">
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio pcd" class="form-check-input" value="naosei" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
@@ -125,15 +125,15 @@
                             <div><label class="form-label">Você está em situação de rua? </label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="sim" id="field1">
+                                    <input type="radio" name="radio em_situacao_de_rua" class="form-check-input" value="sim" id="field1">
                                     <label class="form-check-label" for="field1">Sim</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="nao" id="field2">
+                                    <input type="radio" name="radio em_situacao_de_rua" class="form-check-input" value="nao" id="field2">
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio em_situacao_de_rua" class="form-check-input" value="naosei" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
             
                             <div class="mb-3">
                                 <label class="form-label">Bairro:</label>
-                                <select class="form-select">
+                                <select class="form-select" name="bairro">
                                     <option value="naodefinido"></option>
                                     <option value="aeroporto">Aeroporto</option>
                                     <option value="aerolandia">Aerolândia</option>
@@ -277,7 +277,7 @@
                                 <label class="form-label">Número de crianças que residem na casa (usuário ou familiar):</label>
                                 <div class="row">
                                     <div class="col">
-                                        <input type="number" min="0" class="form-control" />
+                                        <input type="number" min="0" class="form-control" name ="criancas_faixa_etaria_0_5"/>
                                     </div>
                                     <div class="col">
                                         <p>Crianças de 0-5 anos</p>
@@ -285,7 +285,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <input type="number" min="0" class="form-control" />
+                                        <input type="number" min="0" class="form-control" name ="criancas_faixa_etaria_6_11" />
                                     </div>
                                     <div class="col">
                                         <p>Crianças de 6-11 anos</p>
@@ -293,7 +293,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <input type="number" min="0" class="form-control" />
+                                        <input type="number" min="0" class="form-control" name ="criancas_faixa_etaria_12_17" />
                                     </div>
                                     <div class="col">
                                         <p>Crianças de 12-17 anos</p>
@@ -308,7 +308,7 @@
                                 <label class="form-label">Qual(is) tipo(s) de substâncias psicoativas já fez uso na vida?</label>
                                 <div class="row">
                                     <div class="col">
-                                        <ul class="list-group">
+                                        <ul class="list-group" name ="substancias_usadas">
                                             <li class="list-group-item">
                                                 <input type="checkbox" id="field">
                                                 <label class="form-check-label" for="field">Álcool</label>
@@ -323,7 +323,7 @@
                                             </li>
                                             <li class="list-group-item">
                                                 <input type="checkbox" id="field">
-                                                <label for="field" class="form-check-label">Macoha(Shank, haxixe, k2)</label>
+                                                <label for="field" class="form-check-label">Maconha(Shank, haxixe, k2)</label>
                                             </li>
                                             <li class="list-group-item">
                                                 <input type="checkbox" id="field">
@@ -345,7 +345,7 @@
                                         </ul>
                                     </div>
                                     <div class="col">
-                                        <ul class="list-group">
+                                        <ul class="list-group" name="substancias_usadas">
                                             
                                             <li class="list-group-item">
                                                 <input type="checkbox" id="field">
@@ -367,7 +367,7 @@
                                         </ul>
                                     </div>
                                     <div class="col">
-                                        <ul class="list-group">
+                                        <ul class="list-group" name="substancias_usadas">
                                             <li class="list-group-item">
                                                 <input type="checkbox" id="field">
                                                 <label for="field" class="form-check-label">Ecstasy(Bala, MDMA, MD, Mandy)</label>
@@ -392,27 +392,27 @@
             
                             <div class="mb-3">
                                 <label class="form-label">Qual é a primeira substância que você fez uso?</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="primeira_substancia"/>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Qual ou quais substâncias faz uso atualmente</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="quais_substancias_usa" />
                             </div>
             
                             <div class="mb-3">
                                 <label class="form-label">Usa há quanto tempo?</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="quanto_tempo_usa" />
                             </div>
             
                             <div class="mb-3">
                                 <label class="form-label">Quanto tempo após iniciar o uso procurou tratamento pela primeira vez?</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="quanto_tempo_apos_tratamento_procurou_ajuda_primeira_vez" />
                             </div>
             
                             <div class="mb-3">
                                 <label class="form-label">Onde procurou ajuda/tratamento pela primeira vez?</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="onde_procurou_ajuda_primeira_vez" />
                             </div>
                             
                             
@@ -421,7 +421,7 @@
                             <label class="form-label">Qual ou quais órgãos/instituições que faz atendimento a usuários de álcool e/ou outras drogas você já foi atendido?</label>
                             <div class="row">
                                 <div class="col">
-                                    <ul class="list-group">
+                                    <ul class="list-group" name="orgaos_atendimentos">
                                         <li class="list-group-item">
                                             <input type="checkbox" id="field">
                                             <label class="form-check-label" for="field">CAPS AD</label>
@@ -446,7 +446,7 @@
                                 </div>   
 
                                 <div class="col">
-                                    <ul class="list-group">
+                                    <ul class="list-group" name="orgaos_atendimentos">
                                         <li class="list-group-item">
                                             <input type="checkbox" id="field">
                                             <label for="field" class="form-check-label">Instituições religiosas</label>
@@ -476,15 +476,15 @@
                             <div><label class="form-label">Já pensou em suicídio alguma vez? </label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="sim" id="field1">
+                                    <input type="radio" name="radio pensou_em_suicidio" class="form-check-input" value="sim" id="field1">
                                     <label class="form-check-label" for="field1">Sim</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="nao" id="field2">
+                                    <input type="radio" name="radio pensou_em_suicidio" class="form-check-input" value="nao" id="field2">
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio pensou_em_suicidio" class="form-check-input" value="naosei" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
@@ -492,12 +492,12 @@
                             <div class="mb-3">
                                 <label class="form-label">Se sim, de qual forma tentou suicídio?</label>
                                 <div class="form-check">
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control" name="tentou_suicidio" />
                                 </div>
 
                                 <label class="form-label">Há quanto tempo?</label>
                                 <div class="form-check">
-                                    <input type="text" class="form-control" /> 
+                                    <input type="text" class="form-control" name="há_quanto_tempo" /> 
                                 </div>
                 
                             </div>
@@ -506,7 +506,7 @@
                                 <label class="form-label">Qual é a expectativa do usuário e/ou da família em relação a esse atendimento?</label>
                                 <div class="row">
                                     <div class="col">
-                                        <ul class="list-group">
+                                        <ul class="list-group" name="expectativa_relacao_esse_atendimento">
                                             <li class="list-group-item">
                                                 <input type="checkbox" id="field">
                                                 <label class="form-check-label" for="field">Internação voluntária</label>
@@ -522,7 +522,7 @@
                                         </ul>
                                     </div>
                                     <div class="col">
-                                        <ul class="list-group">
+                                        <ul class="list-group" name="expectativa_relacao_esse_atendimento">
                                             <li class="list-group-item">
                                                 <input type="checkbox" id="field">
                                                 <label class="form-check-label" for="field">Suporte Psicológico</label>
@@ -540,15 +540,15 @@
                             <div><label class="form-label">Gostaria de atendimento presencial na CPDrogas? </label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="sim" id="field1">
+                                    <input type="radio" name="radio atendimento_presencial_cpdrogas" class="form-check-input" value="sim" id="field1">
                                     <label class="form-check-label" for="field1">Sim</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="nao" id="field2">
+                                    <input type="radio" name="radio atendimento_presencial_cpdrogas" class="form-check-input" value="nao" id="field2">
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio atendimento_presencial_cpdrogas" class="form-check-input" value="naosei" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
@@ -556,19 +556,19 @@
                     
                             <div class="mb-3">
                                 <label class="form-label">Relato do atendimento</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="relato_atendimento" />
                             </div>
             
                             <div class="mb-3">
                                 <label class="form-label">Encaminhamento</label>
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="encaminhamento" />
                             </div>
             
                             <p>Fortaleza</p>
-                            <input type="datetime-local" class="form-control" />
+                            <input type="datetime-local" class="form-control" name="data_atendimento" />
             
                             <p>Profissional responsável pelo acolhimento/encaminhamento</p>
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" name="profissional" />
 
                             <div class="m-3">
                             <label class="form-label">Você autoriza que os dados pessoais e sensíveis coletados nesse atendimento sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label></div>
