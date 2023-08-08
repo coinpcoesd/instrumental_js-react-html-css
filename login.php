@@ -56,7 +56,7 @@ if(isset( $_POST['login'])) {
             <form action="register.php" method="POST">
 
                 <div class="form-group m-1">
-                    <label for="userEmail">User Email</label>
+                    <label for="userEmail">Email</label>
                     <input required type="email" name="userEmail" class="form-control" />
                 <br />
                 <?php if(isset($wrongLogin)) { ?> 
@@ -65,11 +65,11 @@ if(isset( $_POST['login'])) {
             </div>
  
                 <div class="form-group m-1">
-                    <label for="password">Password</label>
+                    <label for="password">Senha</label>
                     <input required type="password" name="password" class="form-control" />
                 </div>
 
-                <button name="register" class="btn btn-primary m-3" type="submit">Login</button>
+                <button name="register" class="btn btn-primary m-3" type="submit">Entrar</button>
 
             </form>
         </div>

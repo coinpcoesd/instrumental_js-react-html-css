@@ -33,11 +33,11 @@ if(isset($_SESSION['userId'])) {
             <form action="profile.php" method="POST">
             <?php if(isset($user)) { ?> 
                 <div class="form-group">
-                    <label for="userName">User Name</label>
+                    <label for="userName">Usuário</label>
                     <input required type="text" name="userName" class="form-control" value="<?php echo $user->name ?? '' ?>" /> 
                 </div>
                 <div class="form-group">
-                    <label for="userEmail">User Email</label>
+                    <label for="userEmail">E-mail</label>
                     <input required type="email" name="userEmail" class="form-control" value="<?php echo $user->email ?? '' ?>" />
                     <br />
                     <?php if(isset($emailTaken)) { ?> 

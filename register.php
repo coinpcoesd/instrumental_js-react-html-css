@@ -59,7 +59,7 @@ if(isset($_POST['register'])) {
             <form action="register.php" method="POST">
 
                 <div class="form-group">
-                    <label for="userName">Username:</label>
+                    <label for="userName">Usuário:</label>
                     <input required type="text" name="userName" class="form-control m-1" />
                 </div>
 
