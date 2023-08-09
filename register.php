@@ -36,7 +36,7 @@ if(isset($_POST['register'])) {
             // echo "Email já adicionado. <br> ";
             $emailTaken = "Email já adicionado";
         } else {
-            $stmt = $pdo -> prepare('INSERT into users(name, email, password) VALUES(? , ? , ? )');
+            $stmt = $pdo -> prepare('INSERT into users(userName, userEmail, password) VALUES(? , ? , ? )');
             $stmt -> execute( [ $userName, $userEmail, $passwordHashed] );
 
             header('Location: http://localhost/instrumental/index.php');

@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+if(!isset($_SESSION['autenticado'])) {
+    header("Location: index.php");
+    exit();
+}
+
 try {
     if (isset($_POST['fichaatendimento'])) {
         require('.config/db.php');
@@ -15,39 +22,39 @@ try {
     $dbname = 'cpdrogas';
 
     // Conexão com o banco de dados
-    try {
-        $pdo = new PDO("mysql:host=$host;cpdrogas=$dbname, $user, $password");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Conexão estabelecida com sucesso.";
+    // try {
+    //     $pdo = new PDO("mysql:host=$host;cpdrogas=$dbname, $user, $password");
+    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //     echo "Conexão estabelecida com sucesso.";
 
-        if (isset($_POST['userName']) && isset($_POST['userEmail']) && isset($_POST['password'])) {
-            $nome = $_POST['userName'];
-            $email = $_POST['userEmail'];
-            $senha = $_POST['password'];
+    //     if (isset($_POST['userName']) && isset($_POST['userEmail']) && isset($_POST['password'])) {
+    //         $nome = $_POST['userName'];
+    //         $email = $_POST['userEmail'];
+    //         $senha = $_POST['password'];
 
-            // Validação dos campos
-            if (empty($userName) || empty($userEmail) || empty($password)) {
-                throw new Exception("Todos os campos devem ser preenchidos.");
-            } else {
-                // Melhoria: Use uma função de hash para armazenar a senha no banco de dados
-                $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
+    //         // Validação dos campos
+    //         if (empty($userName) || empty($userEmail) || empty($password)) {
+    //             throw new Exception("Todos os campos devem ser preenchidos.");
+    //         } else {
+    //             // Melhoria: Use uma função de hash para armazenar a senha no banco de dados
+    //             $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
-                // Inserção no banco de dados
-                $stmt = $pdo->prepare("INSERT INTO users (nome, email, senha) VALUES (?, ?, ?)");
-                $stmt->execute([$userName, $userEmail, $password]);
+    //             // Inserção no banco de dados
+    //             $stmt = $pdo->prepare("INSERT INTO users (nome, email, senha) VALUES (?, ?, ?)");
+    //             $stmt->execute([$userName, $userEmail, $password]);
 
-                if ($stmt->rowCount() > 0) {
-                    echo "Cadastro feito com sucesso!";
-                } else {
-                    throw new Exception("Erro ao inserir dados.");
-                }
-            }
-        } else {
-            throw new Exception("Campos de formulário não estão definidos.");
-        }
-    } catch (PDOException $e) {
-        throw new Exception("Falha na conexão: " . $e->getMessage());
-    }
+    //             if ($stmt->rowCount() > 0) {
+    //                 echo "Cadastro feito com sucesso!";
+    //             } else {
+    //                 throw new Exception("Erro ao inserir dados.");
+    //             }
+    //         }
+    //     } else {
+    //         throw new Exception("Campos de formulário não estão definidos.");
+    //     }
+    // } catch (PDOException $e) {
+    //     throw new Exception("Falha na conexão: " . $e->getMessage());
+    // }
 
     if (isset($_POST['numero_da_ficha'])) {
         $numero_da_ficha = $_POST['numero_da_ficha'];
@@ -125,6 +132,30 @@ try {
         } catch (PDOException $e) {
             throw new Exception("Erro ao inserir dados: " . $e->getMessage());
         }
+?>
+
+
+
+<script>
+
+    function tipoAtendimento(selectAtendimento) {
+        var dependente = document.getElementById('dependente');
+        var familia = document.getElementById('familia');
+        var familiaedependente = document.getElementById('familiaedependente');
+        var selectOptionsAjuda = selectElement.options[selectElement.selectedIndex];
+    }
+
+    function procurarAjuda(selectAjuda) {
+        var dependente = document.getElementById('dependente');
+        var familia = document.getElementById('familia');
+        var familiaedependente = document.getElementById('familiaedependente');
+        var selectOptionsAjuda = selectElement.options[selectElement.selectedIndex];
+    }
+
+</script>
+
+<?php
+
     } else if(isset($_POST['quem_procurou_ajuda'])) {
         $quem_procurou_ajuda = $_POST['$quem_procurou_ajuda'];
 
@@ -1430,3 +1461,30 @@ if (isset($_POST['remove'])) {
     </form>
 </body>
 </html>
+
+<?php
+
+if (isset($_POST['nomeusuario'])) {
+    echo $_POST['nomeusuario'] . '</br>';
+}
+
+if (isset($_POST['bairro'])) {
+    echo $_POST['cor'] . '</br>';
+}
+
+if (isset($_POST['regional'])) {
+  echo $_POST['regional'] . '</br>';
+}
+
+if (isset($_POST['territorio'])) {
+  echo $_POST['territorio'] . '</br>';
+}
+
+if (isset($_POST['genero'])) {
+  echo $_POST['genero'] . '</br>';
+}
+
+if (isset($_POST['senha'])) {
+    echo $_POST['senha'];
+}
+?>

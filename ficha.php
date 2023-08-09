@@ -1,4 +1,12 @@
-<?php require('./inc/header.html'); ?>
+<?php 
+require('./inc/header.html'); 
+session_start();
+if(!isset($_SESSION['autenticado'])) {
+    header("Location: login.php");
+    exit();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
