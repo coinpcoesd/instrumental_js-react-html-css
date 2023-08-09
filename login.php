@@ -2,7 +2,7 @@
 session_start();
 
 if(isset( $_POST['login'])) {
-    require('./config/db.php');
+    require('./config/login-db.php');
 
     $userEmail = filter_var( $_POST["userEmail"], FILTER_SANITIZE_EMAIL);
     $password = filter_var( $_POST["password"], FILTER_SANITIZE_STRING); 
@@ -45,6 +45,17 @@ if(isset( $_POST['login'])) {
 }
 
 
+?>
+
+<?php
+
+if (isset($_POST['userEmail'])) {
+    echo $_POST['userEmail'] . '</br>';
+}
+
+if (isset($_POST['password'])) {
+    echo $_POST['password'];
+}
 ?>
 
 <?php require('./inc/header.html'); ?>

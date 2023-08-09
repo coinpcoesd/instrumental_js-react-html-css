@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conn) {
             echo "Conexão estabelecida com sucesso.";
 
-            $name = $_POST['email'];
+            $userEmail = $_POST['userEmail'];
             $password = $_POST['password'];
             
-            $sql = "INSERT INTO users (name, password) VALUES ('$name', '$password')";
+            $sql = "INSERT INTO users (userEmail, password) VALUES ('$userEmail', '$password')";
 
             if (mysqli_query($conn, $sql)) {
                 echo "Registro inserido com sucesso.";
