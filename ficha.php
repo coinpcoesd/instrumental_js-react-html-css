@@ -1,5 +1,7 @@
 <?php 
 require('./inc/header.html'); 
+
+// Verifique se o usuário está autenticado.
 session_start();
 if(!isset($_SESSION['autenticado'])) {
     header("Location: login.php");
@@ -19,7 +21,7 @@ if(!isset($_SESSION['autenticado'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <form action="/config/db.php" method="POST">
+    <form action="/config/receber-db.php" method="POST">
 
         <div class="container text-center">
 
@@ -47,7 +49,7 @@ if(!isset($_SESSION['autenticado'])) {
                     
                             <div class="mb-3">
                                 <label class="form-label">Qual é o tipo de atendimento realizado?</label>
-                                <select name="select-atendimento" class="form-select" >
+                                <select name="atendimento" class="form-select" >
                                     <option></option>
                                     <option>Teleatendimento psicossocial via SISGEP</option>
                                     <option>Teleatendimento psicossocial realizado via demanda espontânea</option>
@@ -81,9 +83,9 @@ if(!isset($_SESSION['autenticado'])) {
                                 <label class="form-label">Gênero</label>
                                 <select class="form-select" name="genero">
                                     <option value=""></option>
-                                    <option value="masculino">Homem</option>
-                                    <option value="feminino">Mulher</option>
-                                    <option value="outrogenero"> Outro </option>
+                                    <option value="masculino" name="genero">Homem</option>
+                                    <option value="feminino" name="genero">Mulher</option>
+                                    <option value="outrogenero" name="genero"> Outro </option>
                                 </select>
                             </div>
     
@@ -117,15 +119,15 @@ if(!isset($_SESSION['autenticado'])) {
                             <div><label class="form-label">Você é uma pessoa com deficiência?</label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio pcd" class="form-check-input" value="sim" id="field1">
+                                    <input type="radio" name="radio pessoa_com_deficiencia" class="form-check-input" value="sim" id="field1">
                                     <label class="form-check-label" for="field1">Sim</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio pcd" class="form-check-input" value="nao" id="field2">
+                                    <input type="radio" name="radio pessoa_com_deficiencia" class="form-check-input" value="nao" id="field2">
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio pcd" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio pessoa_com_deficiencia" class="form-check-input" value="naodefinido" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
