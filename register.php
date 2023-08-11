@@ -18,14 +18,29 @@ if(isset($_POST['register'])) {
     //     $passwordHashed = password_hash($password, PASSWORD_DEFAULT); //Substitui o macete do md5.
     // }
 
-    $userName = filter_var( $_POST["userName"], FILTER_SANITIZE_STRING);
-    $userEmail = filter_var( $_POST["userEmail"], FILTER_SANITIZE_EMAIL);
-    $password = filter_var( $_POST["password"], FILTER_SANITIZE_STRING); 
-    $passwordHashed = password_hash( $_POST["password"], PASSWORD_DEFAULT); //Substitui o macete do md5.
+    // Comentei dia 11/08/23 - 11:52
+    // $userName = filter_var( $_POST["userName"], FILTER_SANITIZE_STRING);
+    // $userEmail = filter_var( $_POST["userEmail"], FILTER_SANITIZE_EMAIL);
+    // $password = filter_var( $_POST["password"], FILTER_SANITIZE_STRING); 
+    // $passwordHashed = password_hash( $_POST["password"], PASSWORD_DEFAULT); //Substitui o macete do md5.
 
+
+    // Verificações de campos do formulário - Resolveu o problema acima.
+    if(isset($_POST['userName'])) {
+        $userName = filter_var( $_POST["userName"], FILTER_SANITIZE_STRING);
+    }
+    if(isset($_POST['userEmail'])) {
+        $userEmail = filter_var( $_POST["userEmail"], FILTER_SANITIZE_EMAIL);
+    }
+    if(isset($_POST['password'])) {
+        $password = filter_var( $_POST["password"], FILTER_SANITIZE_STRING); 
+    }
+
+    // Hash da senha
+    $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
     if( filter_var($userEmail, FILTER_VALIDATE_EMAIL) ) {
-        $stmt = $pdo -> prepare('SELECT * FROM users WHERE email = ? ');
+        $stmt = $pdo -> prepare('SELECT * FROM users WHERE userEmail = ? ');
         $stmt -> execute([$userEmail]);
         $totalUsers = $stmt -> rowCount();
 
@@ -39,7 +54,7 @@ if(isset($_POST['register'])) {
             $stmt = $pdo -> prepare('INSERT into users(userName, userEmail, password) VALUES(? , ? , ? )');
             $stmt -> execute( [ $userName, $userEmail, $passwordHashed] );
 
-            header('Location: http://localhost/instrumental/index.php');
+            header('Location: http://localhost/instrumental_versão--final-2/index.php');
 
         }
     }

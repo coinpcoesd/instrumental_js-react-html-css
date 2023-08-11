@@ -143,7 +143,7 @@ if(!isset($_SESSION['autenticado'])) {
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio em_situacao_de_rua" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio em_situacao_de_rua" class="form-check-input" value="naodefinido" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
@@ -507,7 +507,7 @@ if(!isset($_SESSION['autenticado'])) {
 
                                 <label class="form-label">Há quanto tempo?</label>
                                 <div class="form-check">
-                                    <input type="text" class="form-control" name="há_quanto_tempo" /> 
+                                    <input type="text" class="form-control" name="quanto_tempo" /> 
                                 </div>
                 
                             </div>
@@ -584,15 +584,15 @@ if(!isset($_SESSION['autenticado'])) {
                             <label class="form-label">Você autoriza que os dados pessoais e sensíveis coletados nesse atendimento sejam utilizados para a elaboração do painel de dados abertos da Coordenadoria Especial de Políticas sobre Drogas da Prefeitura Municipal de Fortaleza? Independente da autorização, você terá acesso ao atendimento. </label></div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="sim" id="field1">
+                                    <input type="radio" name="radio autorizacao_dados" class="form-check-input" value="sim" id="field1">
                                     <label class="form-check-label" for="field1">Sim</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="nao" id="field2">
+                                    <input type="radio" name="radio autorizacao_dados" class="form-check-input" value="nao" id="field2">
                                     <label class="form-check-label" for="field2">Não</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input type="radio" name="radio" class="form-check-input" value="naosei" id="field3">
+                                    <input type="radio" name="radio autorizacao_dados" class="form-check-input" value="naodefinido" id="field3">
                                     <label class="form-check-label" for="field3">Não sabe/não informou</label>
                                 </div>
                             </div>
