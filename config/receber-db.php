@@ -20,6 +20,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $gestante = $_POST['gestante'];
             $idade = $_POST['idade'];
             $pessoa_com_deficiencia = $_POST['pessoa_com_deficiencia'];
+            $em_situcao_de_rua = $_POST['em_situacao_de_rua'];
+            $endereco = $_POST['endereco'];
+            $bairro = $_POST['bairro'];
+            $criancas_faixa_etaria_0_5 = $_POST['criancas_faixa_etaria_0_5'];
+            $criancas_faixa_etaria_6_11 = $_POST['$criancas_faixa_etaria_6_11'];
+            $criancas_faixa_etaria_12_17 = $_POST['$criancas_faixa_etaria_12_17'];
+            $substancias_usadas = $_POST['substancias_usadas'];
+            $primeira_substancia = $_POST['primeira_substancia'];
+            $quais_substancias_usa = $_POST['$quais_substancias_usa'];
+            $quanto_tempo_usa = $_POST['quanto_tempo_usa'];
+            $quanto_tempo_apos_tratamento_procurou_ajuda_primeira_vez['quanto_tempo_apos_tratamento_procurou_ajuda_primeira_vez'];
+            $onde_procurou_ajuda_primeira_vez = $_POST['onde_procurou_ajuda_primeira_vez'];
+            $orgaos_atendimentos = $_POST['orgaos_atendimentos'];
+            $pensou_em_suicidio = $_POST['pensou_em_suicidio'];
+            $quanto_tempo = $_POST['quanto_tempo'];
+            $expectativa_relacao_esse_atendimento = $_POST['expectativa_relacao_esse_atendimento'];
+            $atendimento_presencial_cpdrogas = $_POST['atendimento_presencial_cpdrogas'];
+            $relato_atendimento = $_POST['relato_atendimento'];
+            $encaminhamento = $_POST['encaminhamento'];
+            $data_atendimento = $_POST['data_atendimento'];
+            $profissional = $_POST['profissional'];
+            $autorizacao_dados = $_POST['autorizacao_dados'];
 
 
 
