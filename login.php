@@ -15,7 +15,8 @@ if(isset( $_POST['login'])) {
         if( password_verify($password, $user -> password )) {
             echo "A senha está correta";
             $_SESSION['userId'] = $user -> id;
-            header('Location: http://localhost/instrumental/index.php');
+            header('Location: http://localhost/instrumental_versão--final-2/fichaatendimento.php');
+            exit; // Certifique-se de sair após o redirecionamento
         } else {
             // echo "O e-mail ou a senha do login estão incorretos";
             $wrongLogin = "O e-mail ou a senha do login estão incorretos";
