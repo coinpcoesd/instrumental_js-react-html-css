@@ -2,7 +2,7 @@
 
 session_start();
 if(!isset($_SESSION['autenticado'])) {
-    header("Location: index.php");
+    header("Location: fichaatendimento.php");
     exit();
 }
 
