@@ -1,10 +1,11 @@
 <?php
 
 session_start();
-if(!isset($_SESSION['autenticado'])) {
-    header("Location: fichaatendimento.php");
-    exit();
-}
+// if(!isset($_SESSION['autenticado'])) {
+//     header("Location: index.php");
+    
+// }
+
 
 try {
     if (isset($_POST['fichaatendimento'])) {
@@ -1059,6 +1060,8 @@ if (isset($_POST['remove'])) {
 // //Espaço para chamar as funções
 // quemAjuda(); 
 
+//Guarda as informações no banco de dados.
+session_commit()
 ?>
 
 <?php require('./inc/header.html'); ?>
