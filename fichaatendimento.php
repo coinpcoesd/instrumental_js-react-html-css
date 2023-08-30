@@ -1,15 +1,50 @@
 <?php
 
 session_start();
+//Quando eu comento essa parte do código, o erro deixa de existir, porém não autentica o sistema. O erro está nessa parte precisa da autenticação do sistema de acordo com o banco de dados. Rever!
+//180823 - 16:00 
 // if(!isset($_SESSION['autenticado'])) {
 //     header("Location: index.php");
     
 // }
 
+//Possibilidade simples
+
+// if (!isset($_SESSION['autenticado'])) {
+
+//     // O usuário não está autenticado, redirecione para a página de login
+//     header("Location: login.php");
+
+// } else {
+
+//     // O usuário está autenticado, faça o que você precisa
+
+// }
+
+//Possibilidade melhor
+// Verifica as credenciais do usuário no banco de dados
+$userName = $_POST['username'];
+$password = $_POST['password'];
+
+// Conexão com o banco de dados (você precisa configurar isso)
+$conn = mysqli_connect("localhost", "userName", "password", "database");
+
+$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+$result = mysqli_query($conn, $query);
+
+if (mysqli_num_rows($result) == 1) {
+    // Autenticação bem-sucedida
+    $_SESSION['autenticado'] = true;
+    header("Location: dashboard.php");
+} else {
+    // Credenciais inválidas
+    header("Location: index.php?erro=1");
+}
+
 
 try {
     if (isset($_POST['fichaatendimento'])) {
-        require('.config/db.php');
+        require('./instrumental_versão--final-2/config/db.php');
 
         $stmt = $pdo->prepare('SELECT * from fichaatendimento WHERE id = ?');
 
@@ -133,6 +168,7 @@ try {
         } catch (PDOException $e) {
             throw new Exception("Erro ao inserir dados: " . $e->getMessage());
         }
+
 ?>
 
 

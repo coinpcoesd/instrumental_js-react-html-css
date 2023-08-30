@@ -3,10 +3,43 @@ require('./inc/header.html');
 
 // Verifique se o usuário está autenticado.
 session_start();
-if(!isset($_SESSION['autenticado'])) {
-    header("Location: login.php");
-    exit();
+// if(!isset($_SESSION['autenticado'])) {
+//     header("Location: login.php");
+//     exit();
+// }
+// Verifica as credenciais do usuário no banco de dados
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $dbname = 'cpdrogas';
+
+    $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
+
+    try {
+        $pdo = new PDO($dsn, $user, $password);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = "SELECT * FROM users WHERE username = :username AND password = :password";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute(array('username' => $username, 'password' => $password));
+
+        if ($stmt->rowCount() == 1) {
+            $_SESSION['autenticado'] = true;
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            $error_message = "Credenciais inválidas.";
+        }
+    } catch(PDOException $e) {
+        echo "Conexão falhou: " . $e->getMessage();
+    }
 }
+
 
 ?>
 
