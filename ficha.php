@@ -83,25 +83,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="mb-3">
                                 <label class="form-label">Qual é o tipo de atendimento realizado?</label>
                                 <select name="atendimento" class="form-select" >
-                                    <option></option>
-                                    <option>Teleatendimento psicossocial via SISGEP</option>
-                                    <option>Teleatendimento psicossocial realizado via demanda espontânea</option>
-                                    <option>Teleatendimento psicossocial presencial realizado externamente</option>
-                                    <option>Outro tipo de atendimento realizado</option>
+                                    <option value="" data-info="" data-info-primaria=""></option>
+                                    <option value="Teleatendimento psicossocial via SISGEP">Teleatendimento psicossocial via SISGEP</option>
+                                    <option value="Teleatendimento psicossocial realizado via demanda espontânea">Teleatendimento psicossocial realizado via demanda espontânea</option>
+                                    <option value="Teleatendimento psicossocial presencial realizado externamente">Teleatendimento psicossocial presencial realizado externamente</option>
+                                    <option value="Outro tipo de atendimento realizado">Outro tipo de atendimento realizado</option>
                                 </select>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Quem procurou ajuda/tratamento?</label>
                                 <select class="form-select" name="quem_procurou_ajuda">
-                                    <option></option>
-                                    <option>Usuário</option>
-                                    <option>Usuário e família</option>
-                                    <option>Família</option>
-                                    <option>Amigos e conhecidos</option>
-                                    <option>Promotorias de Justiça</option>
-                                    <option>Técnicos de instituições</option>
-                                    <option>Outras pessoas</option>
+                                    <option value="" data-info="" data-info-primaria=""></option>
+                                    <option value="Usuário">Usuário</option>
+                                    <option value="Usuário e família">Usuário e família</option>
+                                    <option value="Família">Família</option>
+                                    <option value="Amigos e conhecidos">Amigos e conhecidos</option>
+                                    <option value="Promotorias de Justiça">Promotorias de Justiça</option>
+                                    <option value="Técnicos de instituições">Técnicos de instituições</option>
+                                    <option value="Outras pessoas">Outras pessoas</option>
                                 </select>
                             </div>
     
@@ -114,18 +114,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             
                             <div class="mb-3">
                                 <label class="form-label">Gênero</label>
-                                <select class="form-select" name="genero">
-                                    <option value=""></option>
-                                    <option value="masculino" name="genero">Homem</option>
-                                    <option value="feminino" name="genero">Mulher</option>
-                                    <option value="outrogenero" name="genero"> Outro </option>
-                                </select>
+                                
+                                <label>
+                                    <input type="radio" name="genero" value="feminino" onclick="exibirCampoOutro()"> Feminino
+                                </label>
+                                <label>
+                                    <input type="radio" name="genero" value="masculino" onclick="exibirCampoOutro()"> Masculino
+                                </label>
+                                <label>
+                                    <input type="radio" name="genero" value="outro" onclick="exibirCampoOutro()"> Outro
+                                </label>
+
+                                <div class="mb-3" id="outro" style="display: none;">
+                                    <label class="form-label">Qual gênero?</label>
+                                    <input type="text" class="form-control" name="outro-genero" />
+                                </div>
+
                             </div>
     
-                            <div class="mb-3">
-                                <label class="form-label">Se outro gênero, qual gênero?</label>
-                                <input type="text" class="form-control" name="genero" />
-                            </div>
+                            
                                     
                             <div><label class="form-label">Você é gestante?</label></div>
                             <div class="mb-3">
@@ -189,130 +196,105 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
                             <div class="mb-3">
                                 <label class="form-label">Bairro:</label>
-                                <select class="form-select" name="bairro">
-                                    <option value="naodefinido"></option>
-                                    <option value="aeroporto">Aeroporto</option>
-                                    <option value="aerolandia">Aerolândia</option>
-                                    <option value="altodabalanca">Alto da Balança</option>
-                                    <option value="alvaroweyne">Álvaro Weyne</option>
-                                    <option value="ancuri">Ancuri</option>
-                                    <option value="amadeufurtado">Amadeu Furtado</option>
-                                    <option value="antoniobezerra">Antonio Bezerra</option>
-                                    <option value="aracape">Aracapé</option>
-                                    <option value="austrannunes">Austran Nunes</option>
-                                    <option value="barradoceara">Barra do Ceará</option>
-                                    <option value="barroso">Barroso</option>
-                                    <option value="belavista">Bela Vista</option>
-                                    <option value="benfica">Benfica</option>
-                                    <option value="bomfuturo">Bom Futuro</option>
-                                    <option value="boavista">Boa Vista</option>
-                                    <option value="bomjardim">Bom Jardim</option>
-                                    <option value="caisdoporto">Cais do Porto</option>
-                                    <option value="cajazeiras">Cajazeiras</option>
-                                    <option value="aldeota">Aldeota</option>
-                                    <option value="cambeba">Cambeba</option>
-                                    <option value="canindezinho">Canindezinho</option>
-                                    <option value="carlitopamplona">Carlito Pamplona</option>
-                                    <option value="centro">Centro</option>
-                                    <option value="cidade2">Cidade 2</option>
-                                    <option value="cidadedosf">Cidade dos Funcionários</option>
-                                    <option value="coac">Coacu</option>
-                                    <option value="coco">Coco</option>
-                                    <option value="coite">Coité</option>
-                                    <option value="conjuntoceara1">Conjunto Ceará 1</option>
-                                    <option value="conjuntoceara2">Conjunto Ceará 2</option>
-                                    <option value="conjuntoesperanca">Conjunto Esperança</option>
-                                    <option value="conjuntopalmeiras">Conjunto Palmeiras</option>
-                                    <option value="coutofernandes">Couto Fernandes</option>
-                                    <option value="cristoredentor">Cristo Redentor</option>
-                                    <option value="curio">Curió</option>
-                                    <option value="damas">Damas</option>
-                                    <option value="delourdes">De Lourdes</option>
-                                    <option value="democritorocha">Demócrito Rocha</option>
-                                    <option value="dende">Dendê</option>
-                                    <option value="diasmacedo">Dias Macedo</option>
-                                    <option value="dionisiotorres">Dionísio Torres</option>
-                                    <option value="domlustosa">Dom Lustosa</option>
-                                    <option value="dunas">Dunas</option>
-                                    <option value="edsonqueiroz">Edson Queiroz</option>
-                                    <option value="fariasbrito">Farias Brito</option>
-                                    <option value="fatima">Fátima</option>
-                                    <option value="floresta">Floresta</option>
-                                    <option value="genibau">Genibaú</option>
-                                    <option value="guajeru">Guajeru</option>
-                                    <option value="guararapes">Guararapes</option>
-                                    <option value="granjaportugal">Granja Portugal</option>
-                                    <option value="granjalisboa">Granja Lisboa</option>
-                                    <option value="henriquejorge">Henrique Jorge</option>
-                                    <option value="itaoca">Itaoca</option>
-                                    <option value="itaperi">Itaperi</option>
-                                    <option value="jacarecanga">Jacarecanga</option>
-                                    <option value="jangurussu">Jangurussu</option>
-                                    <option value="jardimamerica">Jardim América</option>
-                                    <option value="jardimcearense">Jardim Cearense</option>
-                                    <option value="jardimguanabara">Jardim Guanabara</option>
-                                    <option value="jardimdasoliveiras">Jardim das Oliveiras</option>
-                                    <option value="jardimiracema">Jardim Miracema</option>
-                                    <option value="joaquimtavora">Joaquim Távora</option>
-                                    <option value="joaoxxiii">João XXIII</option>
-                                    <option value="josebonifacio">José Bonifácio</option>
-                                    <option value="josedealencar">José de Alencar</option>
-                                    <option value="lagoaredonda">Lagoa Redonda</option>
-                                    <option value="lucianocavalcante">Luciano Cavalcante</option>
-                                    <option value="manueldiasbranco">Manuel Dias Branco</option>
-                                    <option value="meireles">Meireles</option>
-                                    <option value="messejana">Messejana</option>
-                                    <option value="montese">Montese</option>
-                                    <option value="bonsucesso">Bonsucesso</option>
-                                    <option value="mondubim">Mondubim</option>
-                                    <option value="montecastelo">Monte Castelo</option>
-                                    <option value="mourabrasil">Moura Brasil</option>
-                                    <option value="mucuripe">Mucuripe</option>
-                                    <option value="novomondubim">Novo Mondubim</option>
-                                    <option value="otaviobonfim">Otávio Bonfim</option>
-                                    <option value="olavooliveira">Olavo Oliveira</option>
-                                    <option value="padreandrade">Padre Andrade</option>
-                                    <option value="panamericano">Panamericano</option>
-                                    <option value="papicu">Papicu</option>
-                                    <option value="paupina">Paupina</option>
-                                    <option value="parangaba">Parangaba</option>
-                                    <option value="parreao">Parreão</option>
-                                    <option value="parquearaxa">Parque Araxá</option>
-                                    <option value="parquedoisirmaos">Parque Dois Irmãos</option>
-                                    <option value="parqueiracema">Parque Iracema</option>
-                                    <option value="parquelandia">Parquelândia</option>
-                                    <option value="parquemanibura">Parque Manibura</option>
-                                    <option value="parquesantamaria">Parque Santa Maria</option>
-                                    <option value="parquesaojose">Parque São José</option>
-                                    <option value="passare">Passaré</option>
-                                    <option value="pedras">Pedras</option>
-                                    <option value="pici">Pici</option>
-                                    <option value="pirambu">Pirambu</option>
-                                    <option value="planaltoayrtonsenna">Planalto Ayrton Senna</option>
-                                    <option value="praiadeiracema">Praia de Iracema</option>
-                                    <option value="praiadofuturoi">Praia do Futuro I</option>
-                                    <option value="praiadofuturoii">Praia do Futuro II</option>
-                                    <option value="prefeitojosewalter">Prefeito José Walter</option>
-                                    <option value="presidentekennedy">Presidente Kennedy</option>
-                                    <option value="presidentevargas">Presidente Vargas</option>
-                                    <option value="quintinocunha">Quintino Cunha</option>
-                                    <option value="rodolfoteofilo">Rodolfo Teófilo</option>
-                                    <option value="sabiguaba">Sabiguaba</option>
-                                    <option value="maraponga">Maraponga</option>
-                                    <option value="salinas">Salinas</option>
-                                    <option value="saobento">São Bento</option>
-                                    <option value="saogerardo">São Gerardo</option>
-                                    <option value="saojoaodotauape">São João do Tauape</option>
-                                    <option value="serrinha">Serrinha</option>
-                                    <option value="siqueira">Siqueira</option>
-                                    <option value="varjota">Varjota</option>
-                                    <option value="vicentepizon">Vicente Pizon</option>
-                                    <option value="vilaellery">Vila Ellery</option>
-                                    <option value="vilamanuelsatiro">Vila Manuel Sátiro</option>
-                                    <option value="vilaperi">Vila Peri</option>
-                                    <option value="vilavelha">Vila Velha</option>
-                                    <option value="vilauniao">Vila União</option>
+                                <select name="bairro" onchange="exibirBairro(this)">
+                                    <option value="" data-info="" data-info-primaria=""></option>
+                                    <option value="Aldeota|Regional 2|Território 7">Aldeota</option>
+                                    <option value="Alto da Balança|Regional 6|Território 26">Alto da Balança</option>
+                                    <option value="Amadeu Furtado|Regional 3|Território 14">Amadeu Furtado</option>
+                                    <option value="Ancuri|Regional 9|Território 33">Ancuri</option>
+                                    <option value="Aracape|Regional 10|Território 34">Aracapé</option>
+                                    <option value="Autran Nunes|Regional 11|Território 37">Autran Nunes</option>
+                                    <option value="Barroso|Regional 9|Território 31">Barroso</option>
+                                    <option value="Barra do Ceará|Regional 1|Território 3">Barra do Ceará</option>
+                                    <option value="Bela Vista|Regional 11|Território 36">Bela Vista</option>
+                                    <option value="Benfica|Regional 4|Território 15">Benfica</option>
+                                    <option value="Boa Vista|Regional 8|Território 20">Boa Vista</option>
+                                    <option value="Bonsucesso|Regional 5|Território 39">Bonsucesso</option>
+                                    <option value="Cais do Porto|Regional 2|Território 9">Cais do Porto</option>
+                                    <option value="cajazeiras|Regional 9|Território 31">Cajazeiras</option>
+                                    <option value="Cambeba|Regional 6|Território 28">Cambeba</option>
+                                    <option value="Canindezinho|Regional 10|Território 34">Canindezinho</option>
+                                    <option value="Carlito Pamplona|Regional 1|Território 5">Carlito Pamplona</option>
+                                    <option value="Centro|Regional 12|Território 1">Centro</option>
+                                    <option value="Cidade 2000|Regional 7|Território 25">Cidade 2000</option>
+                                    <option value="Cocó|Regional 7|Território 23">Cocó</option>
+                                    <option value="Coacu|Regional 6|Território 30">Coaçu</option>
+                                    <option value="Conjunto Palmeiras|Regional 9|Território 32">Conjunto Palmeiras</option>
+                                    <option value="Conjunto Ceará I|Regional 11|Território 38">Conjunto Ceará I</option>
+                                    <option value="Conjunto Ceará II|Regional 11|Território 38">Conjunto Ceará II</option>
+                                    <option value="Couto Fernandes|Regional 11|Território 36">Couto Fernandes</option>
+                                    <option value="Cristo Redentor|Regional 1|Território 4">Cristo Redentor</option>
+                                    <option value="Curió|Regional 6|Território 29">Curió</option>
+                                    <option value="Damas|Regional 4|Território 16">Damas</option>
+                                    <option value="Dendê|Regional 8|Território 19">Dendê</option>
+                                    <option value="Dias Macedo|Regional 8|Território 20">Dias Macêdo</option>
+                                    <option value="joaquim|Regional 2|Território 10">Dionísio Torres</option>
+                                    <option value="Dom Lustosa|Regional 11|Território 37">Dom Lustosa</option>
+                                    <option value="Edson Queiroz|Regional 7|Território 25">Edson Queiroz</option>
+                                    <option value="Farias Brito|Regional 3|Território 13">Farias Brito</option>
+                                    <option value="Fátima|Regional 4|Território 15">Fátima</option>
+                                    <option value="Floresta|Regional 1|Território 6">Floresta</option>
+                                    <option value="Genibau|Regional 11|Território 38">Genibaú</option>
+                                    <option value="Granja Lisboa|Regional 5|Território 39">Granja Lisboa</option>
+                                    <option value="Granja Portugal|Regional 5|Território 39">Granja Portugal</option>
+                                    <option value="Guajeru|Regional 6|Território 29">Guajeru</option>
+                                    <option value="Guararapes|Regional 7|Território 24">Guararapes</option>
+                                    <option value="Henrique Jorge|Regional 11|Território 37">Henrique Jorge</option>
+                                    <option value="Itaoca|Regional 4|Território 17">Itaoca</option>
+                                    <option value="Itaperi|Regional 8|Território 19">Itaperi</option>
+                                    <option value="joaquim|Regional 2|Território 10">Joaquim Távora</option>
+                                    <option value="Jardim das Oliveiras|Regional 6|Território 27">Jardim das Oliveiras</option>
+                                    <option value="jardim|Regional 10|Território 35">Jardim Cearense</option>
+                                    <option value="jose|Regional 6|Território 29">José de Alencar</option>
+                                    <option value="joao|Regional 11|Território 37">João XXIII</option>
+                                    <option value="joqueiclube|Regional 11|Território 37">Jóquei Clube</option>
+                                    <option value="lagoaredonda|Regional 6|Território 29">Lagoa Redonda</option>
+                                    <option value="lucianocavalcante|Território 24">Luciano Cavalcante</option>
+                                    <option value="Praia do Futuro I|Regional 7|Território 22">Praia do Futuro I</option>
+                                    <option value="Praia do Futuro II|Regional 7|Território 22">Praia do Futuro II</option>
+                                    <option value="Parque Iracema|Regional 6|Território 28">Parque Iracema</option>
+                                    <option value="Manuel Dias Branco|Regional 7|Território 23">Manuel Dias Branco</option>
+                                    <option value="Pirambu|Regional 1|Território 4">Pirambu</option>
+                                    <option value="jardim|Regional 6|Território 30">São Bento</option>
+                                    <option value="jardim|Regional 10|Território 35">Maraponga</option>
+                                    <option value="jardim|Regional 10|Território 35">Mondubim</option>
+                                    <option value="jardim|Regional 10|Território 35">Vila Manoel Sátiro</option>
+                                    <option value="jardim|Regional 6|Território 30">Paupina</option>
+                                    <option value="jardim|Regional 12|Território 1">Praia de Iracema</option>
+                                    
+                                    <option value="jose|Regional 8|Território 19">Serrinha</option>
+                                    <option value="jose|Regional 10|Território 34">Parque São José</option>
+                                    <option value="joaquim|Regional 2|Território 10">São João do Tauape</option>
+                                    
+                                    <option value="montecastelo|Regional 3|Território 13">Monte Castelo</option>
+                                    <option value="montese|Regional 4|Território 16">Montese</option>
+                                    <option value="mourabrasil|Regional 12|Território 1">Moura Brasil</option>
+                                    <option value="novomondubim|Regional 10|Território 34">Novo Mondubim</option>
+                                    <option value="olavooliveira|Regional 3|Território 11">Olavo Oliveira</option>
+                                    <option value="padreandrade|Regional 3|Território 12">Padre Andrade</option>
+                                    <option value="parangaba|Regional 4|Território 17">Parangaba</option>
+                                    <option value="parque|Regional 10|Território 34">Parque Santa Rosa</option>
+                                    <option value="parque|Regional 10|Território 34">Parque Presidente Vargas</option>
+                                    <option value="parque|Regional 7|Território 22">Praia do Futuro I</option>
+                                    <option value="parque|Regional 7|Território 22">Praia do Futuro II</option>
+                                    <option value="parque|Regional 6|Território 28">Parque Iracema</option>
+                                    <option value="parquelandia|Regional 3|Território 14">Parquelândia</option>
+                                    <option value="pici|Regional 11|Território 36">Pici</option>
+                                    <option value="planalto|Regional 8|Território 21">Planalto Ayrton Senna</option>
+                                    <option value="prefeito|Regional 8|Território 21">Prefeito José Walter</option>
+                                    <option value="quintino|Regional 3|Território 11">Quintino Cunha</option>
+                                    <option value="rodolfo|Regional 3|Território 14">Rodolfo Teófilo</option>
+                                    <option value="salinas|Regional 7|Território 24">Salinas</option>
+                                    <option value="serrinha|Regional 8|Território 19">Serrinha</option>
+                                    <option value="siqueira|Regional 5|Território 39">Siqueira</option>
+                                    <option value="varjota|Regional 2|Território 8">Varjota</option>
+                                    <option value="vicente|Regional 2|Território 9">Vicente Pinzón</option>
+                                    <option value="vilavelha|Regional 1|Território 2">Vila Velha</option>
+                                    <option value="vilaperi|Regional 4|Território 17">Vila Peri</option>
+                                    <option value="vilauniao|Regional 4|Território 18">Vila União</option>
                                 </select>
+
+
                             </div>
                             
     
@@ -353,36 +335,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="col">
                                         <ul class="list-group" name ="substancias_usadas">
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Álcool">
                                                 <label class="form-check-label" for="field">Álcool</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Tabaco, cigarro, vaping">
                                                 <label class="form-check-label" for="field">Tabaco, cigarro, vaping</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field"> 
+                                                <input type="checkbox" id="field" value="Crack(Mesclado, pitio, raspa)"> 
                                                 <label for="field" class="form-check-label">Crack(Mesclado, pitio, raspa)</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Maconha(Shank, haxixe, k2)">
                                                 <label for="field" class="form-check-label">Maconha(Shank, haxixe, k2)</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Cocaína(Merla, oxi...)">
                                                 <label for="field" class="form-check-label">Cocaína(Merla, oxi...)</label>
                                             </li>
                                             <li class="list-group-item">    
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Solventes(Cola, loló, lança perfume, anti-respingo de solda)">
                                                 <label for="field" class="form-check-label">Solventes(Cola, loló, lança perfume, anti-respingo de solda)</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Tranquilizantes(Diazepam, rivotril, ripinol...)">
                                                 <label for="field" class="form-check-label">Tranquilizantes(Diazepam, rivotril, ripinol...)</label>
                                             </li>
 
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Anestésicos(Boa noite cinderela, ketamina)">
                                                 <label for="field" class="form-check-label">Anestésicos(Boa noite cinderela, ketamina)</label>
                                             </li>
                                         </ul>
@@ -391,19 +373,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <ul class="list-group" name="substancias_usadas">
                                             
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Alucinógenos sintéticos(LSD, Doce, DMT, aranha)">
                                                 <label for="field" class="form-check-label">Alucinógenos sintéticos(LSD, Doce, DMT, aranha)</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Alucinógenos naturais(Cogumelo, zabumba, Ahayuaska, Sto Daime, Ibogaína)">
                                                 <label for="field" class="form-check-label">Alucinógenos naturais(Cogumelo, zabumba, Ahayuaska, Sto Daime, Ibogaína)</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Anfetaminas(Rebite, speed, ritalina)">
                                                 <label for="field" class="form-check-label">Anfetaminas(Rebite, speed, ritalina)</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Opióides(Remédios para dor, morfina, metadona, tramal)">
                                                 <label for="field" class="form-check-label">Opióides(Remédios para dor, morfina, metadona, tramal)</label>
                                             </li>
                                             
@@ -412,19 +394,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="col">
                                         <ul class="list-group" name="substancias_usadas">
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Ecstasy(Bala, MDMA, MD, Mandy)">
                                                 <label for="field" class="form-check-label">Ecstasy(Bala, MDMA, MD, Mandy)</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Heroína">
                                                 <label for="field" class="form-check-label">Heroína</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Não sabe/Não respondeu">
                                                 <label for="field" class="form-check-label">Não sabe/Não respondeu</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" value="Outro">
                                                 <label for="field" class="form-check-label">Outro</label>
                                             </li>
                                         </ul>
@@ -466,23 +448,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="col">
                                     <ul class="list-group" name="orgaos_atendimentos">
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="CAPS AD">
                                             <label class="form-check-label" for="field">CAPS AD</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Unidade básica de saúde">
                                             <label class="form-check-label" for="field">Unidade básica de saúde</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="SHR AD">
                                             <label for="field" class="form-check-label">SHR AD</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Hospital Psiquiátrico">
                                             <label for="field" class="form-check-label">Hospital Psiquiátrico</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Comunidade terapêutica">
                                             <label for="field" class="form-check-label">Comunidade terapêutica</label>
                                         </li>
                                     </ul>
@@ -491,23 +473,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="col">
                                     <ul class="list-group" name="orgaos_atendimentos">
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Instituições religiosas">
                                             <label for="field" class="form-check-label">Instituições religiosas</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Atendimento Psicológico">
                                             <label for="field" class="form-check-label">Atendimento Psicológico</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Atendimento Psiquiátrico">
                                             <label for="field" class="form-check-label">Atendimento Psiquiátrico</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
-                                            <label for="field" class="form-check-label">Grupos de ajuda mutua</label>
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Grupos de ajuda mútua">
+                                            <label for="field" class="form-check-label">Grupos de ajuda mútua</label>
                                         </li>
                                         <li class="list-group-item">
-                                            <input type="checkbox" id="field">
+                                            <input type="checkbox" id="field" name="orgaos_atendimentos" value="Unidade de acolhimento">
                                             <label for="field" class="form-check-label">Unidade de acolhimento</label>
                                         </li>
                                     </ul>
@@ -551,15 +533,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="col">
                                         <ul class="list-group" name="expectativa_relacao_esse_atendimento">
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" name="expectativa_relacao_esse_atendimento" value="Internação voluntária">
                                                 <label class="form-check-label" for="field">Internação voluntária</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" name="expectativa_relacao_esse_atendimento" value="Internação involuntária">
                                                 <label class="form-check-label" for="field">Internação involuntária</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" name="expectativa_relacao_esse_atendimento" value="Orientação">
                                                 <label class="form-check-label" for="field">Orientação</label>
                                             </li>
                                         </ul>
@@ -567,11 +549,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="col">
                                         <ul class="list-group" name="expectativa_relacao_esse_atendimento">
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" name="expectativa_relacao_esse_atendimento" value="Suporte Psicológico">
                                                 <label class="form-check-label" for="field">Suporte Psicológico</label>
                                             </li>
                                             <li class="list-group-item">
-                                                <input type="checkbox" id="field">
+                                                <input type="checkbox" id="field" name="expectativa_relacao_esse_atendimento" value="Tratamento na rede intersetorial álcool e drogas municipal">
                                                 <label class="form-check-label" for="field">Tratamento na rede intersetorial álcool e drogas municipal</label>
                                             </li>
                                         </ul>
@@ -633,7 +615,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     
                         </div>    
                     </div>   
-                    <button type="submit" class="btn btn-primary">Enviar ficha de acolhimento individual</button>    
+                    <input type="submit" class="btn btn-primary" value="Enviar">Enviar ficha de acolhimento individual />    
                 </form>
             </div>
         </div>
@@ -643,3 +625,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 <?php require('./inc/footer.html'); ?>
+
+<script> </script>
+
+<?php
+
+if (isset($_POST['nomeusuario'])) {
+    echo $_POST['nomeusuario'] . '</br>';
+}
+
+if (isset($_POST['bairro'])) {
+    echo $_POST['cor'] . '</br>';
+}
+
+if (isset($_POST['regional'])) {
+  echo $_POST['regional'] . '</br>';
+}
+
+if (isset($_POST['territorio'])) {
+  echo $_POST['territorio'] . '</br>';
+}
+
+if (isset($_POST['genero'])) {
+  echo $_POST['genero'] . '</br>';
+}
+
+if (isset($_POST['senha'])) {
+    echo $_POST['senha'];
+}
+?>
