@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     
                             <div class="mb-3">
                                 <label class="form-label">Qual é o tipo de atendimento realizado?</label>
-                                <select name="atendimento" class="form-select" >
+                                <select name="tipo_de_atendimento" class="form-select" >
                                     <option value="" data-info="" data-info-primaria=""></option>
                                     <option value="Teleatendimento psicossocial via SISGEP">Teleatendimento psicossocial via SISGEP</option>
                                     <option value="Teleatendimento psicossocial realizado via demanda espontânea">Teleatendimento psicossocial realizado via demanda espontânea</option>
@@ -228,7 +228,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <option value="Damas|Regional 4|Território 16">Damas</option>
                                     <option value="Dendê|Regional 8|Território 19">Dendê</option>
                                     <option value="Dias Macedo|Regional 8|Território 20">Dias Macêdo</option>
-                                    <option value="joaquim|Regional 2|Território 10">Dionísio Torres</option>
+                                    <option value="Dionísio Torres|Regional 2|Território 10">Dionísio Torres</option>
                                     <option value="Dom Lustosa|Regional 11|Território 37">Dom Lustosa</option>
                                     <option value="Edson Queiroz|Regional 7|Território 25">Edson Queiroz</option>
                                     <option value="Farias Brito|Regional 3|Território 13">Farias Brito</option>
@@ -242,56 +242,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <option value="Henrique Jorge|Regional 11|Território 37">Henrique Jorge</option>
                                     <option value="Itaoca|Regional 4|Território 17">Itaoca</option>
                                     <option value="Itaperi|Regional 8|Território 19">Itaperi</option>
-                                    <option value="joaquim|Regional 2|Território 10">Joaquim Távora</option>
                                     <option value="Jardim das Oliveiras|Regional 6|Território 27">Jardim das Oliveiras</option>
-                                    <option value="jardim|Regional 10|Território 35">Jardim Cearense</option>
-                                    <option value="jose|Regional 6|Território 29">José de Alencar</option>
-                                    <option value="joao|Regional 11|Território 37">João XXIII</option>
-                                    <option value="joqueiclube|Regional 11|Território 37">Jóquei Clube</option>
-                                    <option value="lagoaredonda|Regional 6|Território 29">Lagoa Redonda</option>
-                                    <option value="lucianocavalcante|Território 24">Luciano Cavalcante</option>
+                                    <option value="Jardim Cearense|Regional 10|Território 35">Jardim Cearense</option>
+                                    <option value="Joaquim Távaro|Regional 2|Território 10">Joaquim Távora</option>
+                                    <option value="João XXIII|Regional 11|Território 37">João XXIII</option>
+                                    <option value="Jóquei Clube|Regional 11|Território 37">Jóquei Clube</option>
+                                    <option value="José de Alencar|Regional 6|Território 29">José de Alencar</option>
+                                    <option value="Lagoaredonda|Regional 6|Território 29">Lagoa Redonda</option>
+                                    <option value="Lucianocavalcante|Território 24">Luciano Cavalcante</option>
+                                    <option value="Manuel Dias Branco|Regional 7|Território 23">Manuel Dias Branco</option>
+                                    <option value="Maraponga|Regional 10|Território 35">Maraponga</option>
+                                    <option value="Mondubim|Regional 10|Território 35">Mondubim</option>
+                                    <option value="Monte Castelo|Regional 3|Território 13">Monte Castelo</option>
+                                    <option value="Montese|Regional 4|Território 16">Montese</option>
+                                    <option value="Moura Brasil|Regional 12|Território 1">Moura Brasil</option>
+                                    <option value="Novo Mondubim|Regional 10|Território 34">Novo Mondubim</option>
+                                    <option value="Olavo Oliveira|Regional 3|Território 11">Olavo Oliveira</option>
+                                    <option value="Padre Andrade|Regional 3|Território 12">Padre Andrade</option>
+                                    <option value="Parque Iracema|Regional 6|Território 28">Parque Iracema</option>
+                                    <option value="Parque Santa Rosa|Regional 10|Território 34">Parque Santa Rosa</option>
+                                    <option value="Parque São José|Regional 10|Território 34">Parque São José</option>
+                                    <option value="Parque Presidente Vargas |Regional 10|Território 34">Parque Presidente Vargas</option>
+                                    <option value="Parangaba|Regional 4|Território 17">Parangaba</option>
+                                    <option value="Parquelandia|Regional 3|Território 14">Parquelândia</option>
+                                    <option value="Paupina |Regional 6|Território 30">Paupina</option>
+                                    <option value="Pirambu|Regional 1|Território 4">Pirambu</option>
+                                    <option value="Pici|Regional 11|Território 36">Pici</option>
+                                    <option value="Planalto Ayrton Senna |Regional 8|Território 21">Planalto Ayrton Senna</option>
+                                    <option value="Praia de Iracema |Regional 12|Território 1">Praia de Iracema</option>
                                     <option value="Praia do Futuro I|Regional 7|Território 22">Praia do Futuro I</option>
                                     <option value="Praia do Futuro II|Regional 7|Território 22">Praia do Futuro II</option>
-                                    <option value="Parque Iracema|Regional 6|Território 28">Parque Iracema</option>
-                                    <option value="Manuel Dias Branco|Regional 7|Território 23">Manuel Dias Branco</option>
-                                    <option value="Pirambu|Regional 1|Território 4">Pirambu</option>
-                                    <option value="jardim|Regional 6|Território 30">São Bento</option>
-                                    <option value="jardim|Regional 10|Território 35">Maraponga</option>
-                                    <option value="jardim|Regional 10|Território 35">Mondubim</option>
-                                    <option value="jardim|Regional 10|Território 35">Vila Manoel Sátiro</option>
-                                    <option value="jardim|Regional 6|Território 30">Paupina</option>
-                                    <option value="jardim|Regional 12|Território 1">Praia de Iracema</option>
-                                    
-                                    <option value="jose|Regional 8|Território 19">Serrinha</option>
-                                    <option value="jose|Regional 10|Território 34">Parque São José</option>
-                                    <option value="joaquim|Regional 2|Território 10">São João do Tauape</option>
-                                    
-                                    <option value="montecastelo|Regional 3|Território 13">Monte Castelo</option>
-                                    <option value="montese|Regional 4|Território 16">Montese</option>
-                                    <option value="mourabrasil|Regional 12|Território 1">Moura Brasil</option>
-                                    <option value="novomondubim|Regional 10|Território 34">Novo Mondubim</option>
-                                    <option value="olavooliveira|Regional 3|Território 11">Olavo Oliveira</option>
-                                    <option value="padreandrade|Regional 3|Território 12">Padre Andrade</option>
-                                    <option value="parangaba|Regional 4|Território 17">Parangaba</option>
-                                    <option value="parque|Regional 10|Território 34">Parque Santa Rosa</option>
-                                    <option value="parque|Regional 10|Território 34">Parque Presidente Vargas</option>
-                                    <option value="parque|Regional 7|Território 22">Praia do Futuro I</option>
-                                    <option value="parque|Regional 7|Território 22">Praia do Futuro II</option>
-                                    <option value="parque|Regional 6|Território 28">Parque Iracema</option>
-                                    <option value="parquelandia|Regional 3|Território 14">Parquelândia</option>
-                                    <option value="pici|Regional 11|Território 36">Pici</option>
-                                    <option value="planalto|Regional 8|Território 21">Planalto Ayrton Senna</option>
-                                    <option value="prefeito|Regional 8|Território 21">Prefeito José Walter</option>
-                                    <option value="quintino|Regional 3|Território 11">Quintino Cunha</option>
-                                    <option value="rodolfo|Regional 3|Território 14">Rodolfo Teófilo</option>
-                                    <option value="salinas|Regional 7|Território 24">Salinas</option>
-                                    <option value="serrinha|Regional 8|Território 19">Serrinha</option>
-                                    <option value="siqueira|Regional 5|Território 39">Siqueira</option>
-                                    <option value="varjota|Regional 2|Território 8">Varjota</option>
-                                    <option value="vicente|Regional 2|Território 9">Vicente Pinzón</option>
-                                    <option value="vilavelha|Regional 1|Território 2">Vila Velha</option>
-                                    <option value="vilaperi|Regional 4|Território 17">Vila Peri</option>
-                                    <option value="vilauniao|Regional 4|Território 18">Vila União</option>
+                                    <option value="Prefeito José Walter|Regional 8|Território 21">Prefeito José Walter</option>
+                                    <option value="Quintino Cunha|Regional 3|Território 11">Quintino Cunha</option>
+                                    <option value="Rodolfo Teófilo |Regional 3|Território 14">Rodolfo Teófilo</option>
+                                    <option value="Salinas|Regional 7|Território 24">Salinas</option>
+                                    <option value="São Bento|Regional 6|Território 30">São Bento</option>
+                                    <option value="São João do Taupe|Regional 2|Território 10">São João do Tauape</option>
+                                    <option value="Serrinha|Regional 8|Território 19">Serrinha</option>
+                                    <option value="Siqueira|Regional 5|Território 39">Siqueira</option>
+                                    <option value="Varjota|Regional 2|Território 8">Varjota</option>
+                                    <option value="Vicente Pinzón|Regional 2|Território 9">Vicente Pinzón</option>
+                                    <option value="Vila Manoel Sátiro |Regional 10|Território 35">Vila Manoel Sátiro</option>
+                                    <option value="Vila Velha|Regional 1|Território 2">Vila Velha</option>
+                                    <option value="Vila Peri|Regional 4|Território 17">Vila Peri</option>
+                                    <option value="Vila União|Regional 4|Território 18">Vila União</option>
                                 </select>
 
 
@@ -626,7 +620,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php require('./inc/footer.html'); ?>
 
-<script> </script>
+<script> 
+function exibirBairro(selectElement) {
+    var regionalDiv = document.getElementById('regional');
+    var territorioDiv = document.getElementById('territorio');
+    var selectedOption = selectElement.options[selectElement.selectedIndex];
+
+    var bairroValue = selectedOption.value;
+    var bairroInfo = bairroValue.split('|');
+    var regionalValue = bairroInfo[1];
+    var territorioValue = bairroInfo[2];
+
+    if (regionalValue && territorioValue) {
+        regionalDiv.textContent = `Regional: ${regionalValue}`;
+        territorioDiv.textContent = `Território: ${territorioValue}`;
+    } else {
+        regionalDiv.textContent = "";
+        territorioDiv.textContent = "";
+    }
+  }
+  function exibirCampoOutro() {
+  var outroRadio = document.querySelector('input[name="genero"][value="outro"]');
+  var outroDiv = document.getElementById('outro');
+  
+  if (outroRadio.checked) {
+    outroDiv.style.display = 'block';
+  } else {
+    outroDiv.style.display = 'none';
+  }
+}
+
+  // Monitorar mudanças nos inputs radio
+  var radioInputs = document.querySelectorAll('input[type="radio"][name="genero"]');
+  for (var i = 0; i < radioInputs.length; i++) {
+    radioInputs[i].addEventListener('change', exibirCampoOutro);
+  }
+
+  exibirBairro();
+</script>
 
 <?php
 
@@ -634,8 +665,40 @@ if (isset($_POST['nomeusuario'])) {
     echo $_POST['nomeusuario'] . '</br>';
 }
 
-if (isset($_POST['bairro'])) {
-    echo $_POST['cor'] . '</br>';
+if (isset($_POST['cpf'])) {
+    echo $_POST['cpf'] . '</br>';
+}
+
+if (isset($_POST['tipo_de_atendimento'])) {
+    echo $_POST['tipo_de_atendimento'] . '</br>';
+}
+
+if(isset($_POST['quem_procurou_ajuda'])) {
+    echo $_POST['quem_procurou_ajuda'] . '</br>';
+}
+
+if (isset($_POST['genero'])) {
+    echo $_POST['genero'] . '</br>';
+  }
+  
+if (isset($_POST['gestante'])) {      
+    echo $_POST['gestante'] . '</br>';
+}
+
+if (isset($_POST['idade'])) {      
+    echo $_POST['idade'] . '</br>';
+}
+
+if (isset($_POST['pessoa_com_deficiencia'])) {      
+    echo $_POST['pessoa_com_deficiencia'] . '</br>';
+}
+
+if (isset($_POST['em_situacao_de_rua'])) {      
+    echo $_POST['em_situacao_de_rua'] . '</br>';
+}
+
+if (isset($_POST['endereco'])) {      
+    echo $_POST['endereco'] . '</br>';
 }
 
 if (isset($_POST['regional'])) {
@@ -646,11 +709,69 @@ if (isset($_POST['territorio'])) {
   echo $_POST['territorio'] . '</br>';
 }
 
-if (isset($_POST['genero'])) {
-  echo $_POST['genero'] . '</br>';
+if(isset($_POST['primeira_substancia'])) {
+    echo $_POST['primeira_substancia'] . '</br>';
 }
 
-if (isset($_POST['senha'])) {
-    echo $_POST['senha'];
+if(isset($_POST['quais_substancias_usa'])) {
+    echo $_POST['quais_substancias_usa'] . '</br>';
 }
+
+if(isset($_POST['quanto_tempo_usa'])) {
+    echo $_POST['quanto_tempo_usa'] . '</br>';
+}
+
+
+if(isset($_POST['quanto_tempo_apos_tratamento_procurou_ajuda_primeira_vez'])) {
+    echo $_POST['quanto_tempo_apos_tratamento_procurou_ajuda_primeira_vez'] . '</br>';
+}
+
+if(isset($_POST['onde_procurou_ajuda_primeira_vez'])) {
+    echo $_POST['onde_procurou_ajuda_primeira_vez'] . '</br>';
+}
+
+if(isset($_POST['pensou_em_suicidio'])) {
+    echo $_POST['pensou_em_suicidio'] . '</br>';
+}
+
+if(isset($_POST['tentou_suicidio'])) {
+    echo $_POST['tentou_suicidio'] . '</br>';
+}
+
+if(isset($_POST['quanto_tempo'])) {
+    echo $_POST['quanto_tempo'] . '</br>';
+}
+
+if(isset($_POST['expectativa_relacao_esse_atendimento'])) {
+    echo $_POST['expectativa_relacao_esse_atendimento'] . '</br>';
+}
+
+if(isset($_POST['atendimento_presencial_cpdrogas'])) {
+    echo $_POST['atendimento_presencial_cpdrogas'] . '</br>';
+}
+
+if(isset($_POST['relato_atendimento'])) {
+    echo $_POST['relato_atendimento'] . '</br>';
+}
+
+if(isset($_POST['encaminhamento'])) {
+    echo $_POST['encaminhamento'] . '</br>';
+}
+
+if(isset($_POST['data_atendimento'])) {
+    echo $_POST['data_atendimento'] . '</br>';
+
+}
+
+if(isset($_POST['profissional'])) {
+    echo $_POST['profissional'] . '</br>';
+
+}
+
+if(isset($_POST['autorizacao_dados'])) {
+    echo $_POST['autorizacao_dados'] . '</br>';
+
+}
+
+
 ?>
