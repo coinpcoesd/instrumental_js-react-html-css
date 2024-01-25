@@ -13,10 +13,11 @@ from openpyxl import load_workbook
 from streamlit import components
 
 
+
 st.set_page_config(page_title='Painel de Dados Abertos da CPDrogas', page_icon=':syringe:', layout='wide')
 
 
-# header
+#header do dashboard
 
 with st.sidebar:
     selected = option_menu("CPDrogas: Painel de Dados Abertos", ["Home", 'Configurações', 'Calendário', 'Outros filtros de pesquisa'], 
@@ -29,6 +30,8 @@ with st.sidebar:
         }
         }
         ) 
+    
+
 # Adiciona o Bootstrap via CDN no cabeçalho HTML
 st.markdown(
     """
