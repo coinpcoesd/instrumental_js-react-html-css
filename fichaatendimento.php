@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) == 1) {
 
 try {
     if (isset($_POST['fichaatendimento'])) {
-        require('./instrumental_versão--final-2/config/db.php');
+        require('./instrumental/config/db.php');
 
         $stmt = $pdo->prepare('SELECT * from fichaatendimento WHERE id = ?');
 
@@ -1216,7 +1216,6 @@ session_commit()
                     <label required>Endereço:</label>
                     <input type="text" class="input-text editable" contenteditable="true" id="field" name="endereco" required />
                         
-
 
                     <label>Bairro:</label>
                         <select class="select editable" contenteditable="true">

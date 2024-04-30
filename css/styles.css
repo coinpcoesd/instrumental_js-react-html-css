@@ -2,15 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    background-color: #26a96c;
+    background-color: #F2C744;
 }
 
 nav {
-    background-color: #2bc016;
+    background-color: #F2A922;
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
@@ -46,11 +46,15 @@ nav a {
 
 a {
     text-decoration: none;
-    text-shadow: #26a96c;
+    text-shadow: #F2A922;
 }
 
 a:hover {
     text-decoration: 1px dashed black;
+}
+
+body {
+    margin-top: 80px;
 }
 
 .container {
@@ -103,7 +107,7 @@ a:hover {
 }
 
 .footer {
-    background-color: #2bc016;
+    background-color: #F2A922;
     padding: 15px 25px;
     display: flex;
     flex-direction: column;
